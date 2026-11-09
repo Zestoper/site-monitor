@@ -60,10 +60,22 @@ async function login(page, site) {
     // 제출 버튼 모양도 제각각이라 비밀번호 칸에서 Enter 로 제출한다
     if (l.submit) await page.click(l.submit)
     else await pw.press('Enter')
-    await page.waitForLoadState('networkidle', { timeout: PAGE_TIMEOUT })
-    await page.waitForTimeout(2_000)
-    const stillOnLogin = new URL(page.url()).pathname === l.path
-    return { tried: true, ok: !stillOnLogin }
+    // 로그인 요청은 서버에서 비밀번호 확인에 몇 초 걸린다 → 로그인 화면을 벗어날 때까지 최대 30초 기다린다
+    const leftLogin = timeout => page.waitForURL(u => new URL(u).pathname !== l.path, { timeout })
+    try {
+      try {
+        await leftLogin(8_000)
+      } catch {
+        // Enter 로 제출이 안 되는 화면이면 로그인 버튼을 직접 누른다
+        await page.locator('button[type="submit"], form button').first().click({ timeout: 5_000 }).catch(() => {})
+        await leftLogin(25_000)
+      }
+    } catch {
+      const msg = (await page.innerText('body').catch(() => '')).match(/[^\n]*(올바르지|틀렸|오류|실패|확인해)[^\n]*/)?.[0]
+      return { tried: true, ok: false, error: msg ? `화면 메시지: ${msg.trim().slice(0, 80)}` : undefined }
+    }
+    await page.waitForLoadState('networkidle', { timeout: PAGE_TIMEOUT }).catch(() => {})
+    return { tried: true, ok: true }
   } catch (e) {
     return { tried: true, ok: false, error: e.message.split('\n')[0] }
   }
