@@ -53,9 +53,13 @@ async function login(page, site) {
   const l = site.login
   try {
     await page.goto(site.url + l.path, { waitUntil: 'networkidle', timeout: PAGE_TIMEOUT })
-    await page.fill(l.email || 'input[type="email"]', email)
-    await page.fill(l.password || 'input[type="password"]', password)
-    await page.click(l.submit || 'button[type="submit"]')
+    // 사이트마다 입력칸 모양이 달라서 넓게 찾고 sites.json 의 login.email 로 바꿀 수 있게 한다
+    await page.locator(l.email || 'input[type="email"], input[name="email"], input[placeholder*="이메일"]').first().fill(email)
+    const pw = page.locator(l.password || 'input[type="password"]').first()
+    await pw.fill(password)
+    // 제출 버튼 모양도 제각각이라 비밀번호 칸에서 Enter 로 제출한다
+    if (l.submit) await page.click(l.submit)
+    else await pw.press('Enter')
     await page.waitForLoadState('networkidle', { timeout: PAGE_TIMEOUT })
     await page.waitForTimeout(2_000)
     const stillOnLogin = new URL(page.url()).pathname === l.path

@@ -2,48 +2,57 @@ name: Site check
 
 on:
   schedule:
-    - cron: '13 22 * * *'   # 매일 07:13 KST
-  workflow_dispatch:         # Actions 탭에서 'Run workflow'로 바로 실행
+    - cron: '13 22 * * *'   # 매일 07:13 KST — 페이지 점검 + API 전체 점검
+  workflow_dispatch:
 
 permissions:
-  contents: write   # reports/ 커밋
-  issues: write     # 문제 있으면 이슈 열기
+  contents: write
+  issues: write
 
 concurrency:
-  group: site-check
+  group: site-monitor
   cancel-in-progress: false
+
+env:
+  # 테스트 계정 (Settings > Secrets and variables > Actions)
+  GAJEON_EMAIL: ${{ secrets.GAJEON_EMAIL }}
+  GAJEON_PASSWORD: ${{ secrets.GAJEON_PASSWORD }}
+  PERSONA_EMAIL: ${{ secrets.PERSONA_EMAIL }}
+  PERSONA_PASSWORD: ${{ secrets.PERSONA_PASSWORD }}
+  MOODIARY_EMAIL: ${{ secrets.MOODIARY_EMAIL }}
+  MOODIARY_PASSWORD: ${{ secrets.MOODIARY_PASSWORD }}
+  NEATLY_EMAIL: ${{ secrets.NEATLY_EMAIL }}
+  NEATLY_PASSWORD: ${{ secrets.NEATLY_PASSWORD }}
+  CLEARWAY_EMAIL: ${{ secrets.CLEARWAY_EMAIL }}
+  CLEARWAY_PASSWORD: ${{ secrets.CLEARWAY_PASSWORD }}
+  NEWSDELIVER_EMAIL: ${{ secrets.NEWSDELIVER_EMAIL }}
+  NEWSDELIVER_PASSWORD: ${{ secrets.NEWSDELIVER_PASSWORD }}
 
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 50
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install
         run: |
           npm install --no-audit --no-fund
           npx playwright install --with-deps chromium
 
-      - name: Check sites
-        id: check
-        env:
-          # 테스트 계정 (없으면 로그인 화면은 건너뜀) — Settings > Secrets and variables > Actions
-          GAJEON_EMAIL: ${{ secrets.GAJEON_EMAIL }}
-          GAJEON_PASSWORD: ${{ secrets.GAJEON_PASSWORD }}
-          PERSONA_EMAIL: ${{ secrets.PERSONA_EMAIL }}
-          PERSONA_PASSWORD: ${{ secrets.PERSONA_PASSWORD }}
-          MOODIARY_EMAIL: ${{ secrets.MOODIARY_EMAIL }}
-          MOODIARY_PASSWORD: ${{ secrets.MOODIARY_PASSWORD }}
-          NEATLY_EMAIL: ${{ secrets.NEATLY_EMAIL }}
-          NEATLY_PASSWORD: ${{ secrets.NEATLY_PASSWORD }}
-          NEWSDELIVER_EMAIL: ${{ secrets.NEWSDELIVER_EMAIL }}
-          NEWSDELIVER_PASSWORD: ${{ secrets.NEWSDELIVER_PASSWORD }}
+      - name: Check pages
+        id: pages
+        continue-on-error: true
         run: node check.mjs
+
+      - name: Check all APIs
+        id: api
+        continue-on-error: true
+        run: node api-check.mjs
 
       - name: Save report to repo
         if: always()
@@ -52,16 +61,19 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add reports
           git diff --cached --quiet || git commit -m "report: $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
-          git push
+          git pull --rebase --quiet && git push
 
       - name: Open issue when something is wrong
-        if: steps.check.outputs.issues != '0' && steps.check.outputs.issues != ''
+        if: always() && (steps.pages.outputs.issues != '0' || steps.api.outputs.api_issues != '0')
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          title="사이트 점검: 문제 ${{ steps.check.outputs.issues }}건 ($(TZ=Asia/Seoul date '+%m/%d'))"
+          n=$(( ${{ steps.pages.outputs.issues || 0 }} + ${{ steps.api.outputs.api_issues || 0 }} ))
+          [ "$n" -eq 0 ] && exit 0
+          cat reports/latest.md > body.md
+          [ -f reports/latest-API.md ] && { echo; echo '---'; echo; cat reports/latest-API.md; } >> body.md
           gh label create site-check --color d73a4a 2>/dev/null || true
-          gh issue create --title "$title" --body-file reports/latest.md --label site-check
+          gh issue create --title "사이트 점검: 문제 ${n}건 ($(TZ=Asia/Seoul date '+%m/%d'))" --body-file body.md --label site-check
 
       - uses: actions/upload-artifact@v4
         if: always()

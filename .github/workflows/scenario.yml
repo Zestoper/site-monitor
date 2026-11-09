@@ -1,0 +1,66 @@
+name: Scenario check
+
+on:
+  schedule:
+    - cron: '43 22 * * 0'   # 매주 월요일 07:43 KST — AI를 실제로 부르므로 주 1회
+  workflow_dispatch:
+    inputs:
+      site:
+        description: '한 사이트만 (gajeon · persona · moodiary · neatly · clearway · newsdeliver) — 비우면 전체'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: site-monitor
+  cancel-in-progress: false
+
+env:
+  GAJEON_EMAIL: ${{ secrets.GAJEON_EMAIL }}
+  GAJEON_PASSWORD: ${{ secrets.GAJEON_PASSWORD }}
+  PERSONA_EMAIL: ${{ secrets.PERSONA_EMAIL }}
+  PERSONA_PASSWORD: ${{ secrets.PERSONA_PASSWORD }}
+  MOODIARY_EMAIL: ${{ secrets.MOODIARY_EMAIL }}
+  MOODIARY_PASSWORD: ${{ secrets.MOODIARY_PASSWORD }}
+  NEATLY_EMAIL: ${{ secrets.NEATLY_EMAIL }}
+  NEATLY_PASSWORD: ${{ secrets.NEATLY_PASSWORD }}
+  CLEARWAY_EMAIL: ${{ secrets.CLEARWAY_EMAIL }}
+  CLEARWAY_PASSWORD: ${{ secrets.CLEARWAY_PASSWORD }}
+  NEWSDELIVER_EMAIL: ${{ secrets.NEWSDELIVER_EMAIL }}
+  NEWSDELIVER_PASSWORD: ${{ secrets.NEWSDELIVER_PASSWORD }}
+
+jobs:
+  scenario:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run scenarios
+        id: sc
+        continue-on-error: true
+        run: node scenarios.mjs ${{ github.event.inputs.site }}
+
+      - name: Save report to repo
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports
+          git diff --cached --quiet || git commit -m "scenario: $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
+          git pull --rebase --quiet && git push
+
+      - name: Open issue when a scenario fails
+        if: always() && steps.sc.outputs.scenario_issues != '0' && steps.sc.outputs.scenario_issues != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create site-check --color d73a4a 2>/dev/null || true
+          gh issue create --title "기능 시나리오: ${{ steps.sc.outputs.scenario_issues }}개 사이트 실패 ($(TZ=Asia/Seoul date '+%m/%d'))" --body-file reports/latest-시나리오.md --label site-check

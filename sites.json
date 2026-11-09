@@ -1,5 +1,12 @@
 {
   "ignore": ["favicon", "/auth/me", "status of 401", "Failed to load resource", "Download the React DevTools"],
+  "apiExclude": [
+    "logout", "callback", "/oauth", "/kakao", "/google", "/naver$", "/auth/gmail", "/auth/sso",
+    "sync", "export", "backtest", "payment", "verify", "password-reset", "fetch", "refresh",
+    "collect", "trigger", "cron", "/jobs", "send", "/lookup",
+    "search-analysis", "ai-analysis", "ai-compare", "/api/report", "/api/recommend",
+    "briefing/today", "/monthly", "/recap", "/docs", "/redoc", "/openapi"
+  ],
   "sites": [
     {
       "id": "gajeon",
@@ -9,7 +16,11 @@
       "health": "https://appliance-trend-insight.onrender.com/",
       "pages": ["/", "/login", "/signup", "/b2b/pricing"],
       "login": { "path": "/login" },
-      "authPages": ["/home", "/b2b", "/trend", "/timing", "/compare", "/recommend", "/chat", "/mypage"]
+      "authPages": ["/home", "/b2b", "/b2b/analysis", "/trend", "/timing", "/compare", "/recommend", "/chat", "/mypage"],
+      "api": {
+        "login": { "path": "/api/auth/login", "idField": "email", "tokenKey": "token" },
+        "params": { "q": "에어컨", "query": "에어컨", "keyword": "에어컨", "category": "에어컨", "product": "에어컨" }
+      }
     },
     {
       "id": "persona",
@@ -19,7 +30,11 @@
       "health": "https://persona-5x3w.onrender.com/health",
       "pages": ["/", "/marketplace", "/pricing", "/login", "/register"],
       "login": { "path": "/login" },
-      "authPages": ["/my", "/favorites", "/conversations", "/collections", "/create", "/profile"]
+      "authPages": ["/my", "/favorites", "/conversations", "/collections", "/create", "/profile"],
+      "api": {
+        "login": { "path": "/api/v1/auth/login", "idField": "email", "tokenKey": "access_token" },
+        "params": { "q": "친구" }
+      }
     },
     {
       "id": "moodiary",
@@ -29,7 +44,11 @@
       "health": "https://moodiary-0she.onrender.com/health",
       "pages": ["/login"],
       "login": { "path": "/login" },
-      "authPages": ["/diary", "/calendar", "/chat", "/consult", "/recap", "/profile", "/payment"]
+      "authPages": ["/diary", "/calendar", "/chat", "/consult", "/recap", "/profile", "/payment"],
+      "api": {
+        "login": { "path": "/api/auth/login", "idField": "email", "tokenKey": "access_token" },
+        "params": {}
+      }
     },
     {
       "id": "neatly",
@@ -39,7 +58,11 @@
       "health": "https://neatly-backend-xzdm.onrender.com/health",
       "pages": ["/", "/login", "/register", "/plans"],
       "login": { "path": "/login" },
-      "authPages": ["/dashboard", "/documents", "/emails", "/calendar", "/insights", "/search", "/settings", "/trash"]
+      "authPages": ["/dashboard", "/documents", "/emails", "/calendar", "/insights", "/search", "/settings", "/trash"],
+      "api": {
+        "login": { "path": "/auth/login", "idField": "email", "tokenKey": "access_token" },
+        "params": { "q": "회의", "query": "회의", "keyword": "회의" }
+      }
     },
     {
       "id": "clearway",
@@ -48,7 +71,11 @@
       "backend": "https://clearway-3z2c.onrender.com",
       "health": "https://clearway-3z2c.onrender.com/health",
       "pages": ["/"],
-      "mustContain": { "/": ["항공권 검색"] }
+      "mustContain": { "/": ["항공권 검색"] },
+      "api": {
+        "login": { "path": "/api/v1/auth/login", "idField": "email", "tokenKey": "access_token" },
+        "params": {}
+      }
     },
     {
       "id": "newsdeliver",
@@ -57,8 +84,12 @@
       "backend": "https://newsdeliver.onrender.com",
       "health": "https://newsdeliver.onrender.com/health",
       "pages": ["/", "/news", "/global-news", "/search", "/about", "/subscribe", "/login"],
-      "login": { "path": "/login" },
-      "authPages": ["/mypage"]
+      "login": { "path": "/login", "email": "#user_id" },
+      "authPages": ["/mypage"],
+      "api": {
+        "login": { "path": "/api/v1/auth/login", "idField": "user_id", "tokenKey": "token" },
+        "params": { "q": "경제", "query": "경제", "keyword": "경제" }
+      }
     }
   ]
 }
