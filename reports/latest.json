@@ -1,0 +1,254 @@
+{
+  "stamp": "2026-11-09 17:01",
+  "total": 7,
+  "results": [
+    {
+      "site": "가전무쌍",
+      "wake": {
+        "ok": true,
+        "ms": 31319,
+        "status": 200
+      },
+      "auth": {
+        "tried": false
+      },
+      "pages": [
+        {
+          "path": "/",
+          "status": 200,
+          "ms": 22837,
+          "issues": [
+            {
+              "type": "느림",
+              "detail": "22.8초"
+            }
+          ]
+        },
+        {
+          "path": "/login",
+          "status": 200,
+          "ms": 2335,
+          "issues": []
+        },
+        {
+          "path": "/signup",
+          "status": 200,
+          "ms": 2060,
+          "issues": []
+        },
+        {
+          "path": "/b2b/pricing",
+          "status": 200,
+          "ms": 2097,
+          "issues": []
+        }
+      ],
+      "count": 1
+    },
+    {
+      "site": "Persona",
+      "wake": {
+        "ok": true,
+        "ms": 151,
+        "status": 200
+      },
+      "auth": {
+        "tried": false
+      },
+      "pages": [
+        {
+          "path": "/",
+          "status": 200,
+          "ms": 2744,
+          "issues": []
+        },
+        {
+          "path": "/marketplace",
+          "status": 200,
+          "ms": 4464,
+          "issues": []
+        },
+        {
+          "path": "/pricing",
+          "status": 200,
+          "ms": 2289,
+          "issues": []
+        },
+        {
+          "path": "/login",
+          "status": 200,
+          "ms": 2282,
+          "issues": []
+        },
+        {
+          "path": "/register",
+          "status": 200,
+          "ms": 2342,
+          "issues": []
+        }
+      ],
+      "count": 0
+    },
+    {
+      "site": "Moodiary",
+      "wake": {
+        "ok": true,
+        "ms": 342,
+        "status": 200
+      },
+      "auth": {
+        "tried": false
+      },
+      "pages": [
+        {
+          "path": "/login",
+          "status": 200,
+          "ms": 2674,
+          "issues": []
+        }
+      ],
+      "count": 0
+    },
+    {
+      "site": "Neatly",
+      "wake": {
+        "ok": true,
+        "ms": 128,
+        "status": 200
+      },
+      "auth": {
+        "tried": false
+      },
+      "pages": [
+        {
+          "path": "/",
+          "status": 200,
+          "ms": 2624,
+          "issues": []
+        },
+        {
+          "path": "/login",
+          "status": 200,
+          "ms": 2227,
+          "issues": [
+            {
+              "type": "빈 화면",
+              "detail": "본문 글자 28자"
+            }
+          ]
+        },
+        {
+          "path": "/register",
+          "status": 200,
+          "ms": 2218,
+          "issues": []
+        },
+        {
+          "path": "/plans",
+          "status": 200,
+          "ms": 2183,
+          "issues": [
+            {
+              "type": "빈 화면",
+              "detail": "본문 글자 28자"
+            }
+          ]
+        }
+      ],
+      "count": 2
+    },
+    {
+      "site": "ClearWay",
+      "wake": {
+        "ok": true,
+        "ms": 128,
+        "status": 200
+      },
+      "auth": {
+        "tried": false
+      },
+      "pages": [
+        {
+          "path": "/",
+          "status": 200,
+          "ms": 2706,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://clearway-3z2c.onrender.com/api/v1/reviews' from origin 'https://clear-way-drab.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/v1/reviews (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://clearway-3z2c.onrender.com/api/v1/notices?category=event' from origin 'https://clear-way-drab.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the reques"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/v1/notices (net::ERR_FAILED)"
+            }
+          ]
+        }
+      ],
+      "count": 4
+    },
+    {
+      "site": "NewsDeliver",
+      "wake": {
+        "ok": true,
+        "ms": 153,
+        "status": 200
+      },
+      "auth": {
+        "tried": false
+      },
+      "pages": [
+        {
+          "path": "/",
+          "status": 200,
+          "ms": 9062,
+          "issues": []
+        },
+        {
+          "path": "/news",
+          "status": 200,
+          "ms": 7631,
+          "issues": []
+        },
+        {
+          "path": "/global-news",
+          "status": 200,
+          "ms": 4097,
+          "issues": []
+        },
+        {
+          "path": "/search",
+          "status": 200,
+          "ms": 3947,
+          "issues": []
+        },
+        {
+          "path": "/about",
+          "status": 200,
+          "ms": 2704,
+          "issues": []
+        },
+        {
+          "path": "/subscribe",
+          "status": 200,
+          "ms": 3011,
+          "issues": []
+        },
+        {
+          "path": "/login",
+          "status": 200,
+          "ms": 2496,
+          "issues": []
+        }
+      ],
+      "count": 0
+    }
+  ]
+}
