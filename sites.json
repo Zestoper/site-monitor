@@ -1,0 +1,64 @@
+{
+  "ignore": ["favicon", "/auth/me", "status of 401", "Failed to load resource", "Download the React DevTools"],
+  "sites": [
+    {
+      "id": "gajeon",
+      "name": "가전무쌍",
+      "url": "https://appliance-trend-insight.vercel.app",
+      "backend": "https://appliance-trend-insight.onrender.com",
+      "health": "https://appliance-trend-insight.onrender.com/",
+      "pages": ["/", "/login", "/signup", "/b2b/pricing"],
+      "login": { "path": "/login" },
+      "authPages": ["/home", "/b2b", "/trend", "/timing", "/compare", "/recommend", "/chat", "/mypage"]
+    },
+    {
+      "id": "persona",
+      "name": "Persona",
+      "url": "https://persona-peach-rho.vercel.app",
+      "backend": "https://persona-5x3w.onrender.com",
+      "health": "https://persona-5x3w.onrender.com/health",
+      "pages": ["/", "/marketplace", "/pricing", "/login", "/register"],
+      "login": { "path": "/login" },
+      "authPages": ["/my", "/favorites", "/conversations", "/collections", "/create", "/profile"]
+    },
+    {
+      "id": "moodiary",
+      "name": "Moodiary",
+      "url": "https://moodiary-five.vercel.app",
+      "backend": "https://moodiary-0she.onrender.com",
+      "health": "https://moodiary-0she.onrender.com/health",
+      "pages": ["/login"],
+      "login": { "path": "/login" },
+      "authPages": ["/diary", "/calendar", "/chat", "/consult", "/recap", "/profile", "/payment"]
+    },
+    {
+      "id": "neatly",
+      "name": "Neatly",
+      "url": "https://neatly-wheat.vercel.app",
+      "backend": "https://neatly-backend-xzdm.onrender.com",
+      "health": "https://neatly-backend-xzdm.onrender.com/health",
+      "pages": ["/", "/login", "/register", "/plans"],
+      "login": { "path": "/login" },
+      "authPages": ["/dashboard", "/documents", "/emails", "/calendar", "/insights", "/search", "/settings", "/trash"]
+    },
+    {
+      "id": "clearway",
+      "name": "ClearWay",
+      "url": "https://clear-way-drab.vercel.app",
+      "backend": "https://clearway-3z2c.onrender.com",
+      "health": "https://clearway-3z2c.onrender.com/health",
+      "pages": ["/"],
+      "mustContain": { "/": ["항공권 검색"] }
+    },
+    {
+      "id": "newsdeliver",
+      "name": "NewsDeliver",
+      "url": "https://newsdeliver.vercel.app",
+      "backend": "https://newsdeliver.onrender.com",
+      "health": "https://newsdeliver.onrender.com/health",
+      "pages": ["/", "/news", "/global-news", "/search", "/about", "/subscribe", "/login"],
+      "login": { "path": "/login" },
+      "authPages": ["/mypage"]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+name: Site check
+
+on:
+  schedule:
+    - cron: '13 22 * * *'   # 매일 07:13 KST
+  workflow_dispatch:         # Actions 탭에서 'Run workflow'로 바로 실행
+
+permissions:
+  contents: write   # reports/ 커밋
+  issues: write     # 문제 있으면 이슈 열기
+
+concurrency:
+  group: site-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+
+      - name: Check sites
+        id: check
+        env:
+          # 테스트 계정 (없으면 로그인 화면은 건너뜀) — Settings > Secrets and variables > Actions
+          GAJEON_EMAIL: ${{ secrets.GAJEON_EMAIL }}
+          GAJEON_PASSWORD: ${{ secrets.GAJEON_PASSWORD }}
+          PERSONA_EMAIL: ${{ secrets.PERSONA_EMAIL }}
+          PERSONA_PASSWORD: ${{ secrets.PERSONA_PASSWORD }}
+          MOODIARY_EMAIL: ${{ secrets.MOODIARY_EMAIL }}
+          MOODIARY_PASSWORD: ${{ secrets.MOODIARY_PASSWORD }}
+          NEATLY_EMAIL: ${{ secrets.NEATLY_EMAIL }}
+          NEATLY_PASSWORD: ${{ secrets.NEATLY_PASSWORD }}
+          NEWSDELIVER_EMAIL: ${{ secrets.NEWSDELIVER_EMAIL }}
+          NEWSDELIVER_PASSWORD: ${{ secrets.NEWSDELIVER_PASSWORD }}
+        run: node check.mjs
+
+      - name: Save report to repo
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports
+          git diff --cached --quiet || git commit -m "report: $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
+          git push
+
+      - name: Open issue when something is wrong
+        if: steps.check.outputs.issues != '0' && steps.check.outputs.issues != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="사이트 점검: 문제 ${{ steps.check.outputs.issues }}건 ($(TZ=Asia/Seoul date '+%m/%d'))"
+          gh label create site-check --color d73a4a 2>/dev/null || true
+          gh issue create --title "$title" --body-file reports/latest.md --label site-check
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: site-report
+          path: reports/
+          retention-days: 14
