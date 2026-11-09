@@ -5,7 +5,8 @@
     "sync", "export", "backtest", "payment", "verify", "password-reset", "fetch", "refresh",
     "collect", "trigger", "cron", "/jobs", "send", "/lookup",
     "search-analysis", "ai-analysis", "ai-compare", "/api/report", "/api/recommend",
-    "briefing/today", "/monthly", "/recap", "/docs", "/redoc", "/openapi"
+    "briefing/today", "/monthly", "/recap", "/docs", "/redoc", "/openapi",
+    "delete", "remove", "/edit"
   ],
   "sites": [
     {
@@ -19,7 +20,7 @@
       "authPages": ["/home", "/b2b", "/b2b/analysis", "/trend", "/timing", "/compare", "/recommend", "/chat", "/mypage"],
       "api": {
         "login": { "path": "/api/auth/login", "idField": "email", "tokenKey": "token" },
-        "params": { "q": "에어컨", "query": "에어컨", "keyword": "에어컨", "category": "에어컨", "product": "에어컨" }
+        "params": { "q": "에어컨", "query": "에어컨", "keyword": "에어컨", "category": "에어컨", "product": "에어컨", "title": "LG 휘센 에어컨" }
       }
     },
     {
@@ -61,7 +62,7 @@
       "authPages": ["/dashboard", "/documents", "/emails", "/calendar", "/insights", "/search", "/settings", "/trash"],
       "api": {
         "login": { "path": "/auth/login", "idField": "email", "tokenKey": "access_token" },
-        "params": { "q": "회의", "query": "회의", "keyword": "회의" }
+        "params": { "q": "회의", "query": "회의", "keyword": "회의", "date": "$today" }
       }
     },
     {
@@ -88,7 +89,8 @@
       "authPages": ["/mypage"],
       "api": {
         "login": { "path": "/api/v1/auth/login", "idField": "user_id", "tokenKey": "token" },
-        "params": { "q": "경제", "query": "경제", "keyword": "경제" }
+        "params": { "q": "경제", "query": "경제", "keyword": "경제" },
+        "pathValues": { "group": "teen" }
       }
     }
   ]

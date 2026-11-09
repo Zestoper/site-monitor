@@ -6,6 +6,9 @@ import { config, stamp, sleep, wakeBackend, call, apiLogin, saveReport, setOutpu
 const SLOW_MS = 10_000
 const exclude = (config.apiExclude || []).map(p => new RegExp(p))
 
+// sites.json 값 중 "$today" 는 오늘 날짜(KST)로 바꾼다
+const special = v => (v === '$today' ? new Date(Date.now() + 9 * 3600_000).toISOString().slice(0, 10) : v)
+
 // 필수 쿼리 값 채우기: sites.json 의 params 에 있으면 그 값, 없으면 이 API는 건너뜀
 function buildQuery(op, site) {
   const qs = new URLSearchParams()
@@ -13,10 +16,42 @@ function buildQuery(op, site) {
     if (p.in !== 'query' || !p.required) continue
     const v = site.api?.params?.[p.name]
     if (v === undefined) return null
-    qs.set(p.name, v)
+    qs.set(p.name, special(v))
   }
   const s = qs.toString()
   return s ? `?${s}` : ''
+}
+
+// 응답에서 첫 번째 항목 꺼내기: 배열이면 [0], 객체면 안에 있는 첫 배열의 [0]
+function firstItem(json) {
+  if (Array.isArray(json)) return json[0]
+  if (json && typeof json === 'object') {
+    for (const v of Object.values(json)) if (Array.isArray(v) && v.length && typeof v[0] === 'object') return v[0]
+  }
+  return undefined
+}
+
+// /api/diary/{diary_id} 같은 주소의 {값}을 채운다
+//  1) sites.json 의 pathValues 에 있으면 그 값
+//  2) 바로 앞 목록 API(/api/diary/ · /api/diary)의 응답 첫 항목에서 같은 이름 → id 순서로 찾기
+function fillPath(path, site, responses) {
+  let filled = path
+  for (const m of path.matchAll(/\{([^}]+)\}/g)) {
+    const name = m[1]
+    let value = site.api?.pathValues?.[name]
+    if (value === undefined) {
+      const parent = path.slice(0, m.index).replace(/\/$/, '')
+      // 목록 주소가 /me · /public · /mine 으로 따로 있는 경우도 찾아본다
+      const item = ['', '/', '/me', '/public', '/mine']
+        .map(suffix => firstItem(responses.get(parent + suffix)))
+        .find(x => x !== undefined)
+      const short = name.replace(/_id$/, '')
+      value = item?.[name] ?? item?.id ?? item?.[`${short}Id`] ?? item?.[short]
+    }
+    if (value === undefined || value === null || typeof value === 'object') return null
+    filled = filled.replace(m[0], encodeURIComponent(String(value)))
+  }
+  return filled
 }
 
 // ── 최신성 점검 ─────────────────────────────────────────────────
@@ -83,21 +118,30 @@ for (const site of config.sites.filter(s => s.api)) {
   const spec = await call(site.backend, '/openapi.json')
   if (!spec.json?.paths) { r.issues.push({ path: '/openapi.json', detail: `API 목록을 못 읽음 (HTTP ${spec.status})` }); continue }
 
-  for (const [path, ops] of Object.entries(spec.json.paths)) {
+  // 목록 API를 먼저 부르고 그 응답의 ID로 상세 API({id})를 채워야 해서 {} 없는 주소부터 돈다
+  const gets = Object.entries(spec.json.paths).filter(([, ops]) => ops.get)
+  gets.sort(([a], [b]) => a.includes('{') - b.includes('{'))
+  const responses = new Map()
+
+  for (const [path, ops] of gets) {
     const op = ops.get
-    if (!op) continue
-    if (path.includes('{')) { r.skipped.push(`${path} (경로 값 필요)`); continue }
     if (exclude.some(re => re.test(path))) { r.skipped.push(`${path} (제외 목록)`); continue }
+    let url = path
+    if (path.includes('{')) {
+      url = fillPath(path, site, responses)
+      if (url === null) { r.skipped.push(`${path} (경로 값 못 찾음)`); continue }
+    }
     const query = buildQuery(op, site)
     if (query === null) { r.skipped.push(`${path} (필수 값 모름)`); continue }
 
-    let res = await call(site.backend, path + query, { token: auth.token, timeout: 45_000 })
+    let res = await call(site.backend, url + query, { token: auth.token, timeout: 45_000 })
+    if (res.status === 200 && res.json) responses.set(path, res.json)
     // 5xx · 연결 실패면 5초 뒤 한 번 더: 두 번째에 되면 '첫 요청만 실패'로 따로 기록
     // (오늘 ClearWay 처럼 DB 연결이 끊겨 첫 요청만 500 나는 문제를 잡기 위함)
     if (res.status >= 500 || res.status === 0) {
       const first = res
       await sleep(5_000)
-      res = await call(site.backend, path + query, { token: auth.token, timeout: 45_000 })
+      res = await call(site.backend, url + query, { token: auth.token, timeout: 45_000 })
       if (res.status > 0 && res.status < 500) {
         r.warnings.push({ path, detail: `첫 요청만 실패 (${first.status || first.error}) → 다시 하니 ${res.status}` })
       }
@@ -105,7 +149,7 @@ for (const site of config.sites.filter(s => s.api)) {
     r.checked.push({ path, status: res.status, ms: res.ms })
     if (res.status >= 500 || res.status === 0) {
       const why = res.error || (res.json?.detail ?? res.text ?? '').toString().replace(/\s+/g, ' ').slice(0, 120)
-      r.issues.push({ path: path + query, detail: `HTTP ${res.status || '-'} ${why}` })
+      r.issues.push({ path: url + query, detail: `HTTP ${res.status || '-'} ${why}` })
     } else if (res.ms > SLOW_MS) {
       r.warnings.push({ path, detail: `느림 ${(res.ms / 1000).toFixed(1)}초` })
     }
