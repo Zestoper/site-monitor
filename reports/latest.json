@@ -1,29 +1,30 @@
 {
-  "stamp": "2026-11-09 17:13",
-  "total": 0,
+  "stamp": "2026-11-09 17:50",
+  "total": 4,
   "results": [
     {
       "site": "가전무쌍",
       "wake": {
         "ok": true,
-        "ms": 203,
+        "ms": 31304,
         "status": 200
       },
       "auth": {
-        "tried": false
+        "tried": true,
+        "ok": false
       },
       "pages": [
         {
           "path": "/",
           "status": 200,
-          "ms": 2071,
+          "ms": 2085,
           "issues": [],
           "retried": true
         },
         {
           "path": "/login",
           "status": 200,
-          "ms": 2324,
+          "ms": 2064,
           "issues": []
         },
         {
@@ -35,119 +36,122 @@
         {
           "path": "/b2b/pricing",
           "status": 200,
-          "ms": 2069,
+          "ms": 2065,
           "issues": []
         }
       ],
-      "count": 0
+      "count": 1
     },
     {
       "site": "Persona",
       "wake": {
         "ok": true,
-        "ms": 161,
+        "ms": 31155,
         "status": 200
       },
       "auth": {
-        "tried": false
+        "tried": true,
+        "ok": false
       },
       "pages": [
         {
           "path": "/",
           "status": 200,
-          "ms": 2951,
+          "ms": 2449,
           "issues": []
         },
         {
           "path": "/marketplace",
           "status": 200,
-          "ms": 4642,
+          "ms": 2816,
           "issues": []
         },
         {
           "path": "/pricing",
           "status": 200,
-          "ms": 2305,
+          "ms": 2269,
           "issues": []
         },
         {
           "path": "/login",
           "status": 200,
-          "ms": 2667,
+          "ms": 2298,
           "issues": []
         },
         {
           "path": "/register",
           "status": 200,
-          "ms": 2185,
+          "ms": 2339,
           "issues": []
         }
       ],
-      "count": 0
+      "count": 1
     },
     {
       "site": "Moodiary",
       "wake": {
         "ok": true,
-        "ms": 160,
+        "ms": 41495,
         "status": 200
       },
       "auth": {
-        "tried": false
+        "tried": true,
+        "ok": false
       },
       "pages": [
         {
           "path": "/login",
           "status": 200,
-          "ms": 2827,
+          "ms": 2711,
           "issues": []
         }
       ],
-      "count": 0
+      "count": 1
     },
     {
       "site": "Neatly",
       "wake": {
         "ok": true,
-        "ms": 161,
+        "ms": 52699,
         "status": 200
       },
       "auth": {
-        "tried": false
+        "tried": true,
+        "ok": false
       },
       "pages": [
         {
           "path": "/",
           "status": 200,
-          "ms": 3003,
+          "ms": 2525,
           "issues": []
         },
         {
           "path": "/login",
           "status": 200,
-          "ms": 2495,
+          "ms": 2208,
           "issues": []
         },
         {
           "path": "/register",
           "status": 200,
-          "ms": 2204,
+          "ms": 2207,
           "issues": []
         },
         {
           "path": "/plans",
           "status": 200,
-          "ms": 2206,
+          "ms": 2190,
           "issues": []
         }
       ],
-      "count": 0
+      "count": 1
     },
     {
       "site": "ClearWay",
       "wake": {
         "ok": true,
-        "ms": 197,
+        "ms": 31497,
         "status": 200
       },
       "auth": {
@@ -157,9 +161,8 @@
         {
           "path": "/",
           "status": 200,
-          "ms": 3029,
-          "issues": [],
-          "retried": true
+          "ms": 3050,
+          "issues": []
         }
       ],
       "count": 0
@@ -168,54 +171,60 @@
       "site": "NewsDeliver",
       "wake": {
         "ok": true,
-        "ms": 200,
+        "ms": 31236,
         "status": 200
       },
       "auth": {
-        "tried": false
+        "tried": true,
+        "ok": true
       },
       "pages": [
         {
           "path": "/",
           "status": 200,
-          "ms": 5640,
-          "issues": [],
-          "retried": true
+          "ms": 12542,
+          "issues": []
         },
         {
           "path": "/news",
           "status": 200,
-          "ms": 6867,
+          "ms": 6582,
           "issues": []
         },
         {
           "path": "/global-news",
           "status": 200,
-          "ms": 4091,
+          "ms": 4075,
           "issues": []
         },
         {
           "path": "/search",
           "status": 200,
-          "ms": 3809,
+          "ms": 3907,
           "issues": []
         },
         {
           "path": "/about",
           "status": 200,
-          "ms": 2821,
+          "ms": 2739,
           "issues": []
         },
         {
           "path": "/subscribe",
           "status": 200,
-          "ms": 3097,
+          "ms": 3134,
           "issues": []
         },
         {
           "path": "/login",
           "status": 200,
-          "ms": 2535,
+          "ms": 2533,
+          "issues": []
+        },
+        {
+          "path": "/mypage",
+          "status": 200,
+          "ms": 6382,
           "issues": []
         }
       ],
