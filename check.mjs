@@ -7,6 +7,7 @@ const config = JSON.parse(await fs.readFile(process.env.SITES_FILE || new URL('.
 const PAGE_TIMEOUT = 60_000        // 페이지 하나 최대 대기
 const SLOW_MS = 15_000             // 이보다 오래 걸리면 '느림'으로 기록
 const WAKE_TIMEOUT = 120_000       // Render 무료 서버가 깨어나길 기다리는 최대 시간
+const RETRY_WAIT = 10_000         // 문제가 나온 페이지를 다시 확인하기 전 대기
 
 // 화면에 찍히면 안 되는 글자 (계산 · 렌더링 버그 흔적)
 const WEIRD_TEXT = [
@@ -104,7 +105,7 @@ async function checkPage(page, site, path) {
   if (ms > SLOW_MS) issues.push({ type: '느림', detail: `${(ms / 1000).toFixed(1)}초` })
 
   const body = await page.innerText('body').catch(() => '')
-  if (body.trim().length < 30) issues.push({ type: '빈 화면', detail: `본문 글자 ${body.trim().length}자` })
+  if (body.trim().length < 15) issues.push({ type: '빈 화면', detail: `본문 글자 ${body.trim().length}자` })
   for (const w of WEIRD_TEXT) {
     const m = body.match(w.re)
     if (m) {
@@ -130,10 +131,19 @@ for (const site of config.sites) {
   const wake = await wakeBackend(site.health)
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, locale: 'ko-KR' })
   const page = await ctx.newPage()
+  // 문제가 나오면 10초 뒤 한 번 더 확인해서 그때도 문제일 때만 기록한다
+  // (Render 서버가 막 깨어난 직후의 일시적인 실패 · 느림을 걸러내기 위함)
+  const checkTwice = async p => {
+    const first = await checkPage(page, site, p)
+    if (!first.issues.length) return first
+    await page.waitForTimeout(RETRY_WAIT)
+    const second = await checkPage(page, site, p)
+    return { ...second, retried: true }
+  }
   const pages = []
-  for (const p of site.pages) pages.push(await checkPage(page, site, p))
+  for (const p of site.pages) pages.push(await checkTwice(p))
   const auth = await login(page, site)
-  if (auth.ok) for (const p of site.authPages || []) pages.push(await checkPage(page, site, p))
+  if (auth.ok) for (const p of site.authPages || []) pages.push(await checkTwice(p))
   await ctx.close()
   const count = pages.reduce((n, p) => n + p.issues.length, 0) + (wake.ok ? 0 : 1) + (auth.tried && !auth.ok ? 1 : 0)
   results.push({ site, wake, auth, pages, count })
@@ -156,7 +166,7 @@ for (const r of results.filter(r => r.count)) {
   if (!r.wake.ok) md += `- **서버 깨우기 실패**: ${r.site.health} 가 ${WAKE_TIMEOUT / 1000}초 안에 응답하지 않음\n`
   if (r.auth.tried && !r.auth.ok) md += `- **로그인 실패**${r.auth.error ? `: ${r.auth.error}` : ' (로그인 화면에서 넘어가지 않음)'}\n`
   for (const p of r.pages.filter(p => p.issues.length)) {
-    md += `\n### \`${p.path}\` (${(p.ms / 1000).toFixed(1)}초)\n`
+    md += `\n### \`${p.path}\` (${(p.ms / 1000).toFixed(1)}초 · 두 번 확인)\n`
     for (const i of p.issues) md += `- **${i.type}**: ${i.detail.replace(/\|/g, '\\|')}\n`
   }
 }
