@@ -13,7 +13,8 @@
 Render 무료 서버는 먼저 `/health`를 불러 최대 2분 동안 깨운 뒤 점검합니다.
 
 ## 결과
-- `reports/latest.md` · `reports/YYYY-MM-DD.md` · `reports/latest.json`
+- `reports/26-11-09/점검_07-13.md` 처럼 날짜 폴더에 시각별로 저장 (같은 이름 `.json`도 함께)
+- 가장 최근 결과는 `reports/latest.md`
 - 문제가 있으면 `site-check` 라벨로 GitHub 이슈가 열립니다.
 
 ## 설정
@@ -27,4 +28,4 @@ Render 무료 서버는 먼저 `/health`를 불러 최대 2분 동안 깨운 뒤
 ```
 bash pull-report.sh
 ```
-최신 리포트를 받아 `~/Desktop/사이트점검/`에 저장하고 엽니다.
+날짜 폴더째로 `~/Desktop/사이트점검/26-11-09/` 형태로 저장하고 가장 최근 리포트를 엽니다.

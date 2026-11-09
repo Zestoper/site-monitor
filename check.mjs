@@ -22,7 +22,8 @@ const WEIRD_TEXT = [
 const now = new Date()
 const kst = new Date(now.getTime() + 9 * 3600_000)
 const stamp = kst.toISOString().slice(0, 16).replace('T', ' ')
-const day = kst.toISOString().slice(0, 10)
+const day = kst.toISOString().slice(2, 10)               // 26-11-09 (날짜별 폴더 이름)
+const hhmm = kst.toISOString().slice(11, 16).replace(':', '-') // 07-13 (하루에 여러 번 돌면 시각으로 구분)
 
 // Render 서버 깨우기: 첫 요청이 30~60초 걸리므로 응답이 올 때까지 기다린다
 async function wakeBackend(url) {
@@ -171,9 +172,14 @@ for (const r of results.filter(r => r.count)) {
   }
 }
 
-await fs.mkdir('reports', { recursive: true })
+// reports/26-11-09/점검_07-13.md 처럼 날짜 폴더에 시각별로 저장하고
+// 가장 최근 결과는 reports/latest.md 에도 남긴다 (이슈 본문 · 빠른 확인용)
+const dir = `reports/${day}`
+await fs.mkdir(dir, { recursive: true })
+const json = JSON.stringify({ stamp, total, results: results.map(r => ({ ...r, site: r.site.name })) }, null, 2)
+await fs.writeFile(`${dir}/점검_${hhmm}.md`, md)
+await fs.writeFile(`${dir}/점검_${hhmm}.json`, json)
 await fs.writeFile('reports/latest.md', md)
-await fs.writeFile(`reports/${day}.md`, md)
-await fs.writeFile('reports/latest.json', JSON.stringify({ stamp, total, results: results.map(r => ({ ...r, site: r.site.name })) }, null, 2))
+await fs.writeFile('reports/latest.json', json)
 if (process.env.GITHUB_OUTPUT) await fs.appendFile(process.env.GITHUB_OUTPUT, `issues=${total}\n`)
-console.log(`\n총 문제 ${total}건 → reports/latest.md`)
+console.log(`\n총 문제 ${total}건 → ${dir}/점검_${hhmm}.md`)
