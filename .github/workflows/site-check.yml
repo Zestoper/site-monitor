@@ -2,9 +2,10 @@ name: Site check
 
 on:
   schedule:
-    - cron: '13 22 * * *'   # 매일 07:13 KST — 페이지 점검 + API 전체 점검
+    - cron: '47 21 * * *'   # 매일 06:47 KST
+    - cron: '47 4 * * *'    # 매일 13:47 KST (아침 것이 빠졌을 때 대비)
   workflow_dispatch:
-
+  
 permissions:
   contents: write
   issues: write
