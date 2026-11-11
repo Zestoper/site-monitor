@@ -6,7 +6,8 @@ set -e
 export PATH="/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:$PATH"
 AUTO=0; [ "$1" = "--auto" ] && AUTO=1
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
-OUT="$HOME/Desktop/사이트점검"
+# 저장소 폴더 옆에 사이트점검 폴더를 만든다 (바탕화면에 있으면 바탕화면 · Developer에 있으면 Developer)
+OUT="$(dirname "$REPO_DIR")/사이트점검"
 
 cd "$REPO_DIR"
 # 1) 평소처럼 최신으로 맞춘다 (fast-forward)
