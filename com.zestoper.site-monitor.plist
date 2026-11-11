@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- 맥북이 하루 두 번(12:30 · 23:30) GitHub 점검 리포트를 받아온다. 꺼져 있었으면 켜질 때 한 번 받는다. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.zestoper.site-monitor</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/junyoungsmac/Desktop/site-monitor/pull-report.sh</string>
+    <string>--auto</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>12</integer><key>Minute</key><integer>30</integer></dict>
+    <dict><key>Hour</key><integer>23</integer><key>Minute</key><integer>30</integer></dict>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>/Users/junyoungsmac/Desktop/site-monitor/pull.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/junyoungsmac/Desktop/site-monitor/pull.log</string>
+</dict>
+</plist>
