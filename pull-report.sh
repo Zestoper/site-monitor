@@ -10,7 +10,12 @@ REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
 OUT="$(dirname "$REPO_DIR")/사이트점검"
 
 cd "$REPO_DIR"
-git fetch --quiet origin main
+# 맥북이 잠자기에서 깨어난 직후에는 와이파이가 아직 안 붙어 있을 수 있다 → 최대 10분 동안 30초마다 다시 시도
+for i in $(seq 1 20); do
+  git fetch --quiet origin main 2>/dev/null && break
+  [ "$i" -eq 20 ] && { echo "[$(date '+%Y-%m-%d %H:%M')] 인터넷 연결이 안 돼서 못 받음 (10분 기다림)"; exit 1; }
+  sleep 30
+done
 
 # 사이트점검 폴더에는 저장소 작업 상태와 상관없이 GitHub 최신 리포트를 그대로 풀어 넣는다
 # (git archive 는 작업 중인 파일을 건드리지 않는다)

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- macOS가 백그라운드 작업의 바탕화면 접근을 막아서 저장소는 ~/Developer 에 둔다. 맥북이 하루 두 번(12:30 · 23:30) GitHub 점검 리포트를 받아온다. 꺼져 있었으면 켜질 때 한 번 받는다. -->
+<!-- macOS가 백그라운드 작업의 바탕화면 접근을 막아서 저장소는 ~/Developer 에 둔다.
+     맥북이 켜져 있는 동안 1시간마다 GitHub 점검 리포트를 받아온다. 로그인할 때도 한 번 받는다.
+     꺼져 있던 날의 리포트는 다음에 켜졌을 때 한꺼번에 들어온다. -->
 <plist version="1.0">
 <dict>
   <key>Label</key>
@@ -11,11 +13,8 @@
     <string>/Users/junyoungsmac/Developer/site-monitor/pull-report.sh</string>
     <string>--auto</string>
   </array>
-  <key>StartCalendarInterval</key>
-  <array>
-    <dict><key>Hour</key><integer>12</integer><key>Minute</key><integer>30</integer></dict>
-    <dict><key>Hour</key><integer>23</integer><key>Minute</key><integer>30</integer></dict>
-  </array>
+  <key>StartInterval</key>
+  <integer>3600</integer>
   <key>RunAtLoad</key>
   <true/>
   <key>StandardOutPath</key>
