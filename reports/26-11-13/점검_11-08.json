@@ -1,0 +1,416 @@
+{
+  "stamp": "2026-11-13 11:08",
+  "total": 0,
+  "results": [
+    {
+      "site": "가전무쌍",
+      "wake": {
+        "ok": true,
+        "ms": 31566,
+        "status": 200
+      },
+      "auth": {
+        "tried": true,
+        "ok": true
+      },
+      "pages": [
+        {
+          "path": "/",
+          "status": 200,
+          "ms": 2139,
+          "issues": [],
+          "retried": true
+        },
+        {
+          "path": "/login",
+          "status": 200,
+          "ms": 2061,
+          "issues": []
+        },
+        {
+          "path": "/signup",
+          "status": 200,
+          "ms": 2063,
+          "issues": []
+        },
+        {
+          "path": "/b2b/pricing",
+          "status": 200,
+          "ms": 2223,
+          "issues": []
+        },
+        {
+          "path": "/home",
+          "status": 200,
+          "ms": 3392,
+          "issues": []
+        },
+        {
+          "path": "/b2b",
+          "status": 200,
+          "ms": 3290,
+          "issues": []
+        },
+        {
+          "path": "/b2b/analysis",
+          "status": 200,
+          "ms": 3300,
+          "issues": []
+        },
+        {
+          "path": "/trend",
+          "status": 200,
+          "ms": 3922,
+          "issues": [],
+          "retried": true
+        },
+        {
+          "path": "/timing",
+          "status": 200,
+          "ms": 3303,
+          "issues": []
+        },
+        {
+          "path": "/compare",
+          "status": 200,
+          "ms": 3301,
+          "issues": []
+        },
+        {
+          "path": "/recommend",
+          "status": 200,
+          "ms": 3274,
+          "issues": []
+        },
+        {
+          "path": "/chat",
+          "status": 200,
+          "ms": 3293,
+          "issues": []
+        },
+        {
+          "path": "/mypage",
+          "status": 200,
+          "ms": 4162,
+          "issues": []
+        }
+      ],
+      "count": 0
+    },
+    {
+      "site": "Persona",
+      "wake": {
+        "ok": true,
+        "ms": 31260,
+        "status": 200
+      },
+      "auth": {
+        "tried": true,
+        "ok": true
+      },
+      "pages": [
+        {
+          "path": "/",
+          "status": 200,
+          "ms": 2746,
+          "issues": []
+        },
+        {
+          "path": "/marketplace",
+          "status": 200,
+          "ms": 3098,
+          "issues": []
+        },
+        {
+          "path": "/pricing",
+          "status": 200,
+          "ms": 2251,
+          "issues": []
+        },
+        {
+          "path": "/login",
+          "status": 200,
+          "ms": 2353,
+          "issues": []
+        },
+        {
+          "path": "/register",
+          "status": 200,
+          "ms": 2243,
+          "issues": []
+        },
+        {
+          "path": "/my",
+          "status": 200,
+          "ms": 3130,
+          "issues": []
+        },
+        {
+          "path": "/favorites",
+          "status": 200,
+          "ms": 2836,
+          "issues": []
+        },
+        {
+          "path": "/conversations",
+          "status": 200,
+          "ms": 3184,
+          "issues": []
+        },
+        {
+          "path": "/collections",
+          "status": 200,
+          "ms": 4671,
+          "issues": []
+        },
+        {
+          "path": "/create",
+          "status": 200,
+          "ms": 2374,
+          "issues": []
+        },
+        {
+          "path": "/profile",
+          "status": 200,
+          "ms": 2420,
+          "issues": []
+        }
+      ],
+      "count": 0
+    },
+    {
+      "site": "Moodiary",
+      "wake": {
+        "ok": true,
+        "ms": 41628,
+        "status": 200
+      },
+      "auth": {
+        "tried": true,
+        "ok": true
+      },
+      "pages": [
+        {
+          "path": "/login",
+          "status": 200,
+          "ms": 2546,
+          "issues": []
+        },
+        {
+          "path": "/diary",
+          "status": 200,
+          "ms": 4210,
+          "issues": []
+        },
+        {
+          "path": "/calendar",
+          "status": 200,
+          "ms": 3182,
+          "issues": []
+        },
+        {
+          "path": "/chat",
+          "status": 200,
+          "ms": 3259,
+          "issues": []
+        },
+        {
+          "path": "/consult",
+          "status": 200,
+          "ms": 3184,
+          "issues": []
+        },
+        {
+          "path": "/recap",
+          "status": 200,
+          "ms": 4309,
+          "issues": []
+        },
+        {
+          "path": "/profile",
+          "status": 200,
+          "ms": 3161,
+          "issues": []
+        },
+        {
+          "path": "/payment",
+          "status": 200,
+          "ms": 3184,
+          "issues": []
+        }
+      ],
+      "count": 0
+    },
+    {
+      "site": "Neatly",
+      "wake": {
+        "ok": true,
+        "ms": 41549,
+        "status": 200
+      },
+      "auth": {
+        "tried": true,
+        "ok": true
+      },
+      "pages": [
+        {
+          "path": "/",
+          "status": 200,
+          "ms": 2659,
+          "issues": []
+        },
+        {
+          "path": "/login",
+          "status": 200,
+          "ms": 2259,
+          "issues": []
+        },
+        {
+          "path": "/register",
+          "status": 200,
+          "ms": 2251,
+          "issues": []
+        },
+        {
+          "path": "/plans",
+          "status": 200,
+          "ms": 2245,
+          "issues": []
+        },
+        {
+          "path": "/dashboard",
+          "status": 200,
+          "ms": 6661,
+          "issues": []
+        },
+        {
+          "path": "/documents",
+          "status": 200,
+          "ms": 5171,
+          "issues": []
+        },
+        {
+          "path": "/emails",
+          "status": 200,
+          "ms": 6261,
+          "issues": []
+        },
+        {
+          "path": "/calendar",
+          "status": 200,
+          "ms": 6056,
+          "issues": []
+        },
+        {
+          "path": "/insights",
+          "status": 200,
+          "ms": 5117,
+          "issues": []
+        },
+        {
+          "path": "/search",
+          "status": 200,
+          "ms": 5426,
+          "issues": []
+        },
+        {
+          "path": "/settings",
+          "status": 200,
+          "ms": 3861,
+          "issues": []
+        },
+        {
+          "path": "/trash",
+          "status": 200,
+          "ms": 4257,
+          "issues": []
+        }
+      ],
+      "count": 0
+    },
+    {
+      "site": "ClearWay",
+      "wake": {
+        "ok": true,
+        "ms": 31548,
+        "status": 200
+      },
+      "auth": {
+        "tried": false
+      },
+      "pages": [
+        {
+          "path": "/",
+          "status": 200,
+          "ms": 3231,
+          "issues": []
+        }
+      ],
+      "count": 0
+    },
+    {
+      "site": "NewsDeliver",
+      "wake": {
+        "ok": true,
+        "ms": 219,
+        "status": 200
+      },
+      "auth": {
+        "tried": true,
+        "ok": true
+      },
+      "pages": [
+        {
+          "path": "/",
+          "status": 200,
+          "ms": 5643,
+          "issues": [],
+          "retried": true
+        },
+        {
+          "path": "/news",
+          "status": 200,
+          "ms": 7007,
+          "issues": []
+        },
+        {
+          "path": "/global-news",
+          "status": 200,
+          "ms": 4269,
+          "issues": []
+        },
+        {
+          "path": "/search",
+          "status": 200,
+          "ms": 3917,
+          "issues": []
+        },
+        {
+          "path": "/about",
+          "status": 200,
+          "ms": 2514,
+          "issues": []
+        },
+        {
+          "path": "/subscribe",
+          "status": 200,
+          "ms": 3163,
+          "issues": []
+        },
+        {
+          "path": "/login",
+          "status": 200,
+          "ms": 2559,
+          "issues": []
+        },
+        {
+          "path": "/mypage",
+          "status": 200,
+          "ms": 5511,
+          "issues": []
+        }
+      ],
+      "count": 0
+    }
+  ]
+}
