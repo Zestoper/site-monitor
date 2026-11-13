@@ -22,8 +22,29 @@ done
 TMP="$(mktemp -d)"
 git archive origin/main reports | tar -x -C "$TMP"
 mkdir -p "$OUT"
+# 한 번 점검에서 나온 페이지 리포트(점검_)와 API 리포트(API_)를 '리포트_시각.md' 하나로 합친다
+# → 하루 두 번 점검이면 날짜 폴더에 '오전 리포트.md' · '오후 리포트.md' 2개만 생긴다 (.json 은 가져오지 않음)
 for d in "$TMP"/reports/[0-9][0-9]-[0-9][0-9]-[0-9][0-9]; do
-  [ -d "$d" ] && cp -R "$d" "$OUT/"     # 끝에 / 를 붙이면 macOS cp 가 폴더째가 아니라 안의 파일만 복사한다
+  [ -d "$d" ] || continue
+  day="$(basename "$d")"
+  rm -rf "$OUT/$day" && mkdir -p "$OUT/$day"       # 이 스크립트가 만든 사본만 새로 만든다
+  apis=$(ls "$d"/API_*.md 2>/dev/null | sort)
+  for page in $(ls "$d"/점검_*.md 2>/dev/null | sort); do
+    t="$(basename "$page" .md)"; t="${t#점검_}"      # 07-13
+    # 같은 실행의 API 리포트 = 페이지 점검 시각 이후 가장 먼저 나온 것
+    api=""
+    for a in $apis; do
+      at="$(basename "$a" .md)"; at="${at#API_}"
+      if [[ ! "$at" < "$t" ]]; then api="$a"; break; fi
+    done
+    # 12시 전에 돈 점검은 '오전 리포트' · 그 뒤는 '오후 리포트'. 같은 때 여러 번 돌았으면 (2) (3)을 붙인다
+    if [ "${t%%-*}" -lt 12 ]; then half="오전"; else half="오후"; fi
+    name="$half 리포트.md"; n=2
+    while [ -e "$OUT/$day/$name" ]; do name="$half 리포트 ($n).md"; n=$((n + 1)); done
+    { cat "$page"; [ -n "$api" ] && { printf '\n\n---\n\n'; cat "$api"; }; } > "$OUT/$day/$name"
+  done
+  # 주 1회 기능 시나리오는 따로 둔다
+  for sc in "$d"/시나리오_*.md; do [ -f "$sc" ] && cp "$sc" "$OUT/$day/"; done
 done
 rm -rf "$TMP"
 
