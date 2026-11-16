@@ -1,0 +1,179 @@
+[
+  {
+    "site": "가전무쌍",
+    "steps": [
+      {
+        "name": "로그인",
+        "result": "ok",
+        "detail": ""
+      },
+      {
+        "name": "제품 검색",
+        "result": "ok",
+        "detail": "30개 · 등급 0개"
+      },
+      {
+        "name": "분석",
+        "result": "ok",
+        "detail": "32초 · LG전자 휘센 PW0830R2L"
+      },
+      {
+        "name": "수요 예측",
+        "result": "ok",
+        "detail": ""
+      },
+      {
+        "name": "안전사고 TOP 3",
+        "result": "ok",
+        "detail": "90건"
+      },
+      {
+        "name": "날씨 카드",
+        "result": "ok",
+        "detail": ""
+      },
+      {
+        "name": "AI 리포트",
+        "result": "ok",
+        "detail": ""
+      }
+    ],
+    "failed": 0,
+    "warned": 0
+  },
+  {
+    "site": "Persona",
+    "steps": [
+      {
+        "name": "로그인",
+        "result": "ok",
+        "detail": ""
+      },
+      {
+        "name": "캐릭터 목록",
+        "result": "ok",
+        "detail": "20개 · 츤데레 여자친구 아린"
+      },
+      {
+        "name": "AI 채팅",
+        "result": "ok",
+        "detail": "\"뭐, 별거 아니지만… 나는 아린이라고 해. 지금은 네가 필요해서 여기 있…\""
+      },
+      {
+        "name": "테스트 대화 지우기",
+        "result": "ok",
+        "detail": ""
+      }
+    ],
+    "failed": 0,
+    "warned": 0
+  },
+  {
+    "site": "Moodiary",
+    "steps": [
+      {
+        "name": "로그인",
+        "result": "ok",
+        "detail": ""
+      },
+      {
+        "name": "일기 쓰기",
+        "result": "ok",
+        "detail": "2초"
+      },
+      {
+        "name": "감정 분석",
+        "result": "ok",
+        "detail": "기쁨,설렘,감사 · 5점"
+      },
+      {
+        "name": "테스트 일기 삭제",
+        "result": "ok",
+        "detail": ""
+      }
+    ],
+    "failed": 0,
+    "warned": 0
+  },
+  {
+    "site": "Neatly",
+    "steps": [
+      {
+        "name": "로그인",
+        "result": "ok",
+        "detail": ""
+      },
+      {
+        "name": "문서 업로드",
+        "result": "ok",
+        "detail": "2초"
+      },
+      {
+        "name": "AI 요약",
+        "result": "ok",
+        "detail": "\"자동 점검용 테스트 문서로, Neatly에 업로드된 문서가 AI 요약 기…\""
+      },
+      {
+        "name": "테스트 문서 삭제",
+        "result": "ok",
+        "detail": ""
+      }
+    ],
+    "failed": 0,
+    "warned": 0
+  },
+  {
+    "site": "ClearWay",
+    "steps": [
+      {
+        "name": "로그인",
+        "result": "ok",
+        "detail": ""
+      },
+      {
+        "name": "항공편 검색",
+        "result": "ok",
+        "detail": "인천 출발 20편"
+      },
+      {
+        "name": "후기",
+        "result": "ok",
+        "detail": "0개"
+      },
+      {
+        "name": "이벤트 공지",
+        "result": "ok",
+        "detail": "0개"
+      }
+    ],
+    "failed": 0,
+    "warned": 0
+  },
+  {
+    "site": "NewsDeliver",
+    "steps": [
+      {
+        "name": "로그인",
+        "result": "ok",
+        "detail": ""
+      },
+      {
+        "name": "뉴스 목록",
+        "result": "ok",
+        "detail": "20개"
+      },
+      {
+        "name": "기사 열기",
+        "result": "ok",
+        "detail": "현대차, 국내 전 사업장서 안전 캠페인 실시...경영진 현장점검"
+      },
+      {
+        "name": "AI 요약",
+        "result": "warn",
+        "detail": "이 기사에는 요약이 없음"
+      }
+    ],
+    "failed": 0,
+    "warned": 1
+  }
+]
