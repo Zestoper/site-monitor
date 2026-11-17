@@ -60,7 +60,7 @@
       "pages": ["/", "/login", "/register", "/plans"],
       "login": { "path": "/login" },
       "authPages": ["/dashboard", "/documents", "/emails", "/calendar", "/insights", "/search", "/settings", "/trash"],
-      "ignore": ["404 /briefing/generate"],
+      "ignore": ["404 /briefing/generate", "400 /emails"],
       "api": {
         "login": { "path": "/auth/login", "idField": "email", "tokenKey": "access_token" },
         "params": { "q": "회의", "query": "회의", "keyword": "회의", "date": "$today" }
