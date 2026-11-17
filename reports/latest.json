@@ -1,12 +1,12 @@
 {
-  "stamp": "2026-11-17 13:11",
-  "total": 10,
+  "stamp": "2026-11-17 17:56",
+  "total": 7,
   "results": [
     {
       "site": "가전무쌍",
       "wake": {
         "ok": true,
-        "ms": 31231,
+        "ms": 31202,
         "status": 200
       },
       "auth": {
@@ -17,81 +17,81 @@
         {
           "path": "/",
           "status": 200,
-          "ms": 2070,
+          "ms": 2125,
           "issues": [],
           "retried": true
         },
         {
           "path": "/login",
           "status": 200,
-          "ms": 2086,
+          "ms": 2154,
           "issues": []
         },
         {
           "path": "/signup",
           "status": 200,
-          "ms": 2068,
+          "ms": 2120,
           "issues": []
         },
         {
           "path": "/b2b/pricing",
           "status": 200,
-          "ms": 2073,
+          "ms": 2054,
           "issues": []
         },
         {
           "path": "/home",
           "status": 200,
-          "ms": 3201,
+          "ms": 3246,
           "issues": []
         },
         {
           "path": "/b2b",
           "status": 200,
-          "ms": 3183,
+          "ms": 3249,
           "issues": []
         },
         {
           "path": "/b2b/analysis",
           "status": 200,
-          "ms": 3185,
+          "ms": 3241,
           "issues": []
         },
         {
           "path": "/trend",
           "status": 200,
-          "ms": 3902,
+          "ms": 3843,
           "issues": [],
           "retried": true
         },
         {
           "path": "/timing",
           "status": 200,
-          "ms": 3222,
+          "ms": 3244,
           "issues": []
         },
         {
           "path": "/compare",
           "status": 200,
-          "ms": 3196,
+          "ms": 3246,
           "issues": []
         },
         {
           "path": "/recommend",
           "status": 200,
-          "ms": 3174,
+          "ms": 3240,
           "issues": []
         },
         {
           "path": "/chat",
           "status": 200,
-          "ms": 3195,
+          "ms": 3302,
           "issues": []
         },
         {
           "path": "/mypage",
           "status": 200,
-          "ms": 4052,
+          "ms": 3242,
           "issues": []
         }
       ],
@@ -101,7 +101,7 @@
       "site": "Persona",
       "wake": {
         "ok": true,
-        "ms": 31182,
+        "ms": 31133,
         "status": 200
       },
       "auth": {
@@ -112,67 +112,67 @@
         {
           "path": "/",
           "status": 200,
-          "ms": 2598,
+          "ms": 2371,
           "issues": []
         },
         {
           "path": "/marketplace",
           "status": 200,
-          "ms": 3059,
+          "ms": 2840,
           "issues": []
         },
         {
           "path": "/pricing",
           "status": 200,
-          "ms": 2184,
+          "ms": 2241,
           "issues": []
         },
         {
           "path": "/login",
           "status": 200,
-          "ms": 2244,
+          "ms": 2230,
           "issues": []
         },
         {
           "path": "/register",
           "status": 200,
-          "ms": 2189,
+          "ms": 2240,
           "issues": []
         },
         {
           "path": "/my",
           "status": 200,
-          "ms": 2935,
+          "ms": 3028,
           "issues": []
         },
         {
           "path": "/favorites",
           "status": 200,
-          "ms": 2695,
+          "ms": 2729,
           "issues": []
         },
         {
           "path": "/conversations",
           "status": 200,
-          "ms": 2962,
+          "ms": 3138,
           "issues": []
         },
         {
           "path": "/collections",
           "status": 200,
-          "ms": 5054,
+          "ms": 4751,
           "issues": []
         },
         {
           "path": "/create",
           "status": 200,
-          "ms": 2409,
+          "ms": 2336,
           "issues": []
         },
         {
           "path": "/profile",
           "status": 200,
-          "ms": 2410,
+          "ms": 2349,
           "issues": []
         }
       ],
@@ -182,70 +182,29 @@
       "site": "Moodiary",
       "wake": {
         "ok": true,
-        "ms": 41195,
+        "ms": 41157,
         "status": 200
       },
       "auth": {
         "tried": true,
-        "ok": true
+        "ok": false,
+        "error": "locator.fill: Timeout 30000ms exceeded."
       },
       "pages": [
         {
           "path": "/login",
           "status": 200,
-          "ms": 2522,
-          "issues": []
-        },
-        {
-          "path": "/diary",
-          "status": 200,
-          "ms": 4577,
-          "issues": []
-        },
-        {
-          "path": "/calendar",
-          "status": 200,
-          "ms": 3072,
-          "issues": []
-        },
-        {
-          "path": "/chat",
-          "status": 200,
-          "ms": 3077,
-          "issues": []
-        },
-        {
-          "path": "/consult",
-          "status": 200,
-          "ms": 3032,
-          "issues": []
-        },
-        {
-          "path": "/recap",
-          "status": 200,
-          "ms": 4061,
-          "issues": []
-        },
-        {
-          "path": "/profile",
-          "status": 200,
-          "ms": 3113,
-          "issues": []
-        },
-        {
-          "path": "/payment",
-          "status": 200,
-          "ms": 3023,
+          "ms": 2741,
           "issues": []
         }
       ],
-      "count": 0
+      "count": 1
     },
     {
       "site": "Neatly",
       "wake": {
         "ok": true,
-        "ms": 41398,
+        "ms": 96,
         "status": 200
       },
       "auth": {
@@ -256,57 +215,47 @@
         {
           "path": "/",
           "status": 200,
-          "ms": 2857,
+          "ms": 2512,
           "issues": []
         },
         {
           "path": "/login",
           "status": 200,
-          "ms": 2512,
+          "ms": 2365,
           "issues": []
         },
         {
           "path": "/register",
           "status": 200,
-          "ms": 2256,
+          "ms": 2234,
           "issues": []
         },
         {
           "path": "/plans",
           "status": 200,
-          "ms": 2156,
+          "ms": 2231,
           "issues": []
         },
         {
           "path": "/dashboard",
           "status": 200,
-          "ms": 5883,
-          "issues": [
-            {
-              "type": "API/리소스 실패",
-              "detail": "POST 404 /briefing/generate"
-            }
-          ],
-          "retried": true
+          "ms": 5043,
+          "issues": []
         },
         {
           "path": "/documents",
           "status": 200,
-          "ms": 5232,
+          "ms": 5571,
           "issues": []
         },
         {
           "path": "/emails",
           "status": 200,
-          "ms": 4817,
+          "ms": 4260,
           "issues": [
             {
-              "type": "콘솔 에러",
-              "detail": "Access to XMLHttpRequest at 'https://neatly-backend-xzdm.onrender.com/emails?label=INBOX' from origin 'https://neatly-wheat.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
-            },
-            {
-              "type": "요청 실패",
-              "detail": "GET /emails (net::ERR_FAILED)"
+              "type": "API/리소스 실패",
+              "detail": "GET 400 /emails"
             }
           ],
           "retried": true
@@ -314,15 +263,27 @@
         {
           "path": "/calendar",
           "status": 200,
-          "ms": 5692,
+          "ms": 4753,
           "issues": [
             {
+              "type": "API/리소스 실패",
+              "detail": "GET 400 /emails"
+            },
+            {
               "type": "콘솔 에러",
-              "detail": "Access to XMLHttpRequest at 'https://neatly-backend-xzdm.onrender.com/emails' from origin 'https://neatly-wheat.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+              "detail": "Access to XMLHttpRequest at 'https://neatly-backend-xzdm.onrender.com/documents' from origin 'https://neatly-wheat.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
             },
             {
               "type": "요청 실패",
-              "detail": "GET /emails (net::ERR_FAILED)"
+              "detail": "GET /documents (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to XMLHttpRequest at 'https://neatly-backend-xzdm.onrender.com/calendar/events/today?client_date=2026-11-17' from origin 'https://neatly-wheat.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /calendar/events/today (net::ERR_FAILED)"
             }
           ],
           "retried": true
@@ -330,35 +291,35 @@
         {
           "path": "/insights",
           "status": 200,
-          "ms": 5146,
+          "ms": 5351,
           "issues": []
         },
         {
           "path": "/search",
           "status": 200,
-          "ms": 4634,
+          "ms": 4559,
           "issues": []
         },
         {
           "path": "/settings",
           "status": 200,
-          "ms": 4000,
+          "ms": 4403,
           "issues": []
         },
         {
           "path": "/trash",
           "status": 200,
-          "ms": 3760,
+          "ms": 3740,
           "issues": []
         }
       ],
-      "count": 5
+      "count": 6
     },
     {
       "site": "ClearWay",
       "wake": {
         "ok": true,
-        "ms": 31398,
+        "ms": 415,
         "status": 200
       },
       "auth": {
@@ -368,7 +329,7 @@
         {
           "path": "/",
           "status": 200,
-          "ms": 3391,
+          "ms": 3094,
           "issues": []
         }
       ],
@@ -378,7 +339,7 @@
       "site": "NewsDeliver",
       "wake": {
         "ok": true,
-        "ms": 31176,
+        "ms": 79,
         "status": 200
       },
       "auth": {
@@ -388,80 +349,54 @@
       "pages": [
         {
           "path": "/",
-          "status": null,
-          "ms": 61502,
-          "issues": [
-            {
-              "type": "페이지 열기 실패",
-              "detail": "page.goto: Timeout 60000ms exceeded."
-            },
-            {
-              "type": "느림",
-              "detail": "61.5초"
-            }
-          ],
-          "retried": true
+          "status": 200,
+          "ms": 5654,
+          "issues": []
         },
         {
           "path": "/news",
-          "status": null,
-          "ms": 61498,
-          "issues": [
-            {
-              "type": "페이지 열기 실패",
-              "detail": "page.goto: Timeout 60000ms exceeded."
-            },
-            {
-              "type": "느림",
-              "detail": "61.5초"
-            }
-          ],
-          "retried": true
+          "status": 200,
+          "ms": 4361,
+          "issues": []
         },
         {
           "path": "/global-news",
           "status": 200,
-          "ms": 32701,
-          "issues": [
-            {
-              "type": "느림",
-              "detail": "32.7초"
-            }
-          ],
-          "retried": true
+          "ms": 3735,
+          "issues": []
         },
         {
           "path": "/search",
           "status": 200,
-          "ms": 3894,
+          "ms": 3537,
           "issues": []
         },
         {
           "path": "/about",
           "status": 200,
-          "ms": 2743,
+          "ms": 2230,
           "issues": []
         },
         {
           "path": "/subscribe",
           "status": 200,
-          "ms": 3025,
+          "ms": 2983,
           "issues": []
         },
         {
           "path": "/login",
           "status": 200,
-          "ms": 2520,
+          "ms": 2223,
           "issues": []
         },
         {
           "path": "/mypage",
           "status": 200,
-          "ms": 5134,
+          "ms": 5050,
           "issues": []
         }
       ],
-      "count": 5
+      "count": 0
     }
   ]
 }
