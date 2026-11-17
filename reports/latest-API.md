@@ -1,4 +1,4 @@
-# API 전체 점검 (2026-11-16 22:17 KST)
+# API 전체 점검 (2026-11-17 13:26 KST)
 
 **문제 1건** · 주의 0건
 
@@ -9,7 +9,7 @@
 | Moodiary | ✅ | 11개 | 0 | 8 | 성공 |
 | Neatly | ❌ 1건 | 18개 | 0 | 9 | 성공 |
 | ClearWay | ✅ | 29개 | 0 | 7 | 성공 |
-| NewsDeliver | ✅ | 41개 | 0 | 21 | 성공 |
+| NewsDeliver | ✅ | 41개 | 0 | 18 | 성공 |
 
 ## Neatly
 https://neatly-backend-xzdm.onrender.com
@@ -20,11 +20,11 @@ https://neatly-backend-xzdm.onrender.com
 
 | 사이트 | 항목 | 상태 |
 |---|---|---|
-| 가전무쌍 | 가격 수집 | ✅ 마지막 2026-11-15 (1일 전) |
-| 가전무쌍 | 기상청 날씨 | ✅ 마지막 2026-11-14 (2일 전) |
-| 가전무쌍 | 에어코리아 미세먼지 | ✅ 마지막 2026-11-16 (0일 전) |
-| NewsDeliver | 국내 뉴스 수집 | ✅ 가장 최근 기사 0.2시간 전 |
-| NewsDeliver | 해외 뉴스 수집 | ✅ 가장 최근 기사 0.3시간 전 |
+| 가전무쌍 | 가격 수집 | ✅ 마지막 2026-11-17 (0일 전) |
+| 가전무쌍 | 기상청 날씨 | ✅ 마지막 2026-11-16 (1일 전) |
+| 가전무쌍 | 에어코리아 미세먼지 | ✅ 마지막 2026-11-17 (0일 전) |
+| NewsDeliver | 국내 뉴스 수집 | ✅ 가장 최근 기사 0.5시간 전 |
+| NewsDeliver | 해외 뉴스 수집 | ✅ 가장 최근 기사 0.6시간 전 |
 
 <details><summary>건너뛴 API 목록</summary>
 
@@ -38,6 +38,6 @@ https://neatly-backend-xzdm.onrender.com
 
 **ClearWay**: /api/v1/bookings/lookup (제외 목록) · /api/v1/admin/flight-sync/status (제외 목록) · /api/v1/auth/{provider}/login (경로 값 못 찾음) · /api/v1/auth/{provider}/callback (제외 목록) · /api/v1/flights/{flight_id}/seats (필수 값 모름) · /api/v1/notices/{notice_id} (경로 값 못 찾음) · /api/v1/chat/rooms/{room_id}/messages (경로 값 못 찾음)
 
-**NewsDeliver**: /oauth/kakao (제외 목록) · /oauth/kakao/callback (제외 목록) · /oauth/naver (제외 목록) · /oauth/naver/callback (제외 목록) · /oauth/google (제외 목록) · /oauth/google/callback (제외 목록) · /auth/sso (제외 목록) · /logout (제외 목록) · /subscribe/payment/success (제외 목록) · /subscribe/payment/fail (제외 목록) · /verify-email (제외 목록) · /api/admin/fetch-status (제외 목록) · /api/v1/auth/password-reset/check (제외 목록) · /internal/jobs/fetch-news (제외 목록) · /internal/jobs/newsletter (제외 목록) · /news/{news_id} (경로 값 못 찾음) · /news/{news_id}/delete (제외 목록) · /news/{news_id}/comments (경로 값 못 찾음) · /press/edit/{news_id} (제외 목록) · /press/delete/{news_id} (제외 목록) · /api/chat/room/{room_id}/messages (경로 값 못 찾음)
+**NewsDeliver**: /auth/sso (제외 목록) · /logout (제외 목록) · /subscribe/payment/success (제외 목록) · /subscribe/payment/fail (제외 목록) · /verify-email (제외 목록) · /api/admin/fetch-status (제외 목록) · /api/v1/auth/password-reset/check (제외 목록) · /internal/jobs/fetch-news (제외 목록) · /internal/jobs/newsletter (제외 목록) · /oauth/{provider}/login (제외 목록) · /oauth/{provider} (제외 목록) · /oauth/{provider}/callback (제외 목록) · /news/{news_id} (경로 값 못 찾음) · /news/{news_id}/delete (제외 목록) · /news/{news_id}/comments (경로 값 못 찾음) · /press/edit/{news_id} (제외 목록) · /press/delete/{news_id} (제외 목록) · /api/chat/room/{room_id}/messages (경로 값 못 찾음)
 
 </details>
