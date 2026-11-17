@@ -44,6 +44,44 @@ function isIgnored(text, site) {
   return list.some(p => text.includes(p))
 }
 
+// 'networkidle'은 언론사 썸네일처럼 다른 서버의 이미지가 늦게 오면 60초를 다 기다리다 실패한다.
+// 그래서 화면 뼈대(domcontentloaded)가 뜬 뒤 '우리 사이트 · 우리 백엔드' 요청만 다 끝날 때까지 기다린다.
+function siteHosts(site) {
+  return [new URL(site.url).host, site.backend && new URL(site.backend).host].filter(Boolean)
+}
+
+async function gotoAndSettle(page, site, url) {
+  const hosts = siteHosts(site)
+  const inflight = new Map()
+  const own = req => { try { return hosts.includes(new URL(req.url()).host) } catch { return false } }
+  const onReq = req => { if (own(req)) inflight.set(req, new URL(req.url()).pathname) }
+  const onDone = req => { inflight.delete(req) }
+  page.on('request', onReq)
+  page.on('requestfinished', onDone)
+  page.on('requestfailed', onDone)
+  try {
+    const deadline = Date.now() + PAGE_TIMEOUT
+    const res = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: PAGE_TIMEOUT })
+    let quietSince = 0
+    while (true) {
+      if (inflight.size === 0) {
+        if (!quietSince) quietSince = Date.now()
+        if (Date.now() - quietSince >= 500) break
+      } else quietSince = 0
+      if (Date.now() > deadline) {
+        const left = [...new Set(inflight.values())].slice(0, 3).join(', ')
+        throw new Error(`우리 서버 요청이 ${PAGE_TIMEOUT / 1000}초 안에 안 끝남: ${left}`)
+      }
+      await page.waitForTimeout(100)
+    }
+    return res
+  } finally {
+    page.off('request', onReq)
+    page.off('requestfinished', onDone)
+    page.off('requestfailed', onDone)
+  }
+}
+
 // 사이트에 로그인 (테스트 계정이 Secrets에 있을 때만)
 async function login(page, site) {
   const prefix = site.id.toUpperCase()
@@ -52,7 +90,7 @@ async function login(page, site) {
   if (!site.login || !email || !password) return { tried: false }
   const l = site.login
   try {
-    await page.goto(site.url + l.path, { waitUntil: 'networkidle', timeout: PAGE_TIMEOUT })
+    await gotoAndSettle(page, site, site.url + l.path)
     // 사이트마다 입력칸 모양이 달라서 넓게 찾고 sites.json 의 login.email 로 바꿀 수 있게 한다
     await page.locator(l.email || 'input[type="email"], input[name="email"], input[placeholder*="이메일"]').first().fill(email)
     const pw = page.locator(l.password || 'input[type="password"]').first()
@@ -74,7 +112,7 @@ async function login(page, site) {
       const msg = (await page.innerText('body').catch(() => '')).match(/[^\n]*(올바르지|틀렸|오류|실패|확인해)[^\n]*/)?.[0]
       return { tried: true, ok: false, error: msg ? `화면 메시지: ${msg.trim().slice(0, 80)}` : undefined }
     }
-    await page.waitForLoadState('networkidle', { timeout: PAGE_TIMEOUT }).catch(() => {})
+    await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => {})
     return { tried: true, ok: true }
   } catch (e) {
     return { tried: true, ok: false, error: e.message.split('\n')[0] }
@@ -83,7 +121,7 @@ async function login(page, site) {
 
 async function checkPage(page, site, path) {
   const issues = []
-  const hosts = [new URL(site.url).host, site.backend && new URL(site.backend).host].filter(Boolean)
+  const hosts = siteHosts(site)
   const onConsole = msg => {
     if (msg.type() === 'error' && !isIgnored(msg.text(), site)) issues.push({ type: '콘솔 에러', detail: msg.text().slice(0, 300) })
   }
@@ -111,7 +149,7 @@ async function checkPage(page, site, path) {
   const start = Date.now()
   let status = null
   try {
-    const res = await page.goto(site.url + path, { waitUntil: 'networkidle', timeout: PAGE_TIMEOUT })
+    const res = await gotoAndSettle(page, site, site.url + path)
     status = res?.status() ?? null
     if (status && status >= 400) issues.push({ type: '페이지 응답', detail: `HTTP ${status}` })
   } catch (e) {
@@ -195,6 +233,9 @@ await fs.mkdir(dir, { recursive: true })
 const json = JSON.stringify({ stamp, total, results: results.map(r => ({ ...r, site: r.site.name })) }, null, 2)
 await fs.writeFile(`${dir}/점검_${hhmm}.md`, md)
 await fs.writeFile(`${dir}/점검_${hhmm}.json`, json)
+// 어느 예약으로 돈 점검인지(오전/오후) 따로 남긴다. GitHub 예약이 몇 시간 늦게 돌아도
+// 06:47 예약이면 '오전 리포트'로 받도록 pull-report.sh 가 이 파일을 먼저 본다
+if (process.env.REPORT_SLOT) await fs.writeFile(`${dir}/점검_${hhmm}.slot`, process.env.REPORT_SLOT + '\n')
 await fs.writeFile('reports/latest.md', md)
 await fs.writeFile('reports/latest.json', json)
 if (process.env.GITHUB_OUTPUT) await fs.appendFile(process.env.GITHUB_OUTPUT, `issues=${total}\n`)

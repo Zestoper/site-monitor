@@ -48,6 +48,9 @@ jobs:
       - name: Check pages
         id: pages
         continue-on-error: true
+        env:
+          # 06:47 예약 = 오전 · 13:47 예약 = 오후 (늦게 돌아도 그대로). 직접 실행은 비워두면 시각으로 정한다
+          REPORT_SLOT: ${{ github.event.schedule == '47 21 * * *' && '오전' || github.event.schedule == '47 4 * * *' && '오후' || '' }}
         run: node check.mjs
 
       - name: Check all APIs

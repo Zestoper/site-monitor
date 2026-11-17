@@ -37,8 +37,12 @@ for d in "$TMP"/reports/[0-9][0-9]-[0-9][0-9]-[0-9][0-9]; do
       at="$(basename "$a" .md)"; at="${at#API_}"
       if [[ ! "$at" < "$t" ]]; then api="$a"; break; fi
     done
-    # 12시 전에 돈 점검은 '오전 리포트' · 그 뒤는 '오후 리포트'. 같은 때 여러 번 돌았으면 (2) (3)을 붙인다
-    if [ "${t%%-*}" -lt 12 ]; then half="오전"; else half="오후"; fi
+    # 예약 점검은 어느 예약으로 돌았는지(.slot)로 정한다 → 06:47 예약이 13시에 돌아도 '오전 리포트'
+    # .slot 이 없으면(직접 실행 · 예전 리포트) 12시 전은 '오전' · 그 뒤는 '오후'. 같은 때 여러 번 돌았으면 (2) (3)을 붙인다
+    half="$(cat "$d/점검_$t.slot" 2>/dev/null | tr -d '[:space:]')"
+    if [ "$half" != "오전" ] && [ "$half" != "오후" ]; then
+      if [ "$((10#${t%%-*}))" -lt 12 ]; then half="오전"; else half="오후"; fi
+    fi
     name="$half 리포트.md"; n=2
     while [ -e "$OUT/$day/$name" ]; do name="$half 리포트 ($n).md"; n=$((n + 1)); done
     { cat "$page"; [ -n "$api" ] && { printf '\n\n---\n\n'; cat "$api"; }; } > "$OUT/$day/$name"
