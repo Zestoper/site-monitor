@@ -1,4 +1,4 @@
-# API 전체 점검 (2026-11-18 12:16 KST)
+# API 전체 점검 (2026-11-18 22:35 KST)
 
 **문제 없음** ✅ · 주의 1건
 
@@ -14,7 +14,7 @@
 ## 가전무쌍
 https://appliance-trend-insight.onrender.com
 
-- ⚠️ `/api/timing` 느림 12.6초
+- ⚠️ `/api/timing` 느림 12.1초
 
 ## 데이터 최신성
 
@@ -24,7 +24,7 @@ https://appliance-trend-insight.onrender.com
 | 가전무쌍 | 기상청 날씨 | ✅ 마지막 2026-11-17 (1일 전) |
 | 가전무쌍 | 에어코리아 미세먼지 | ✅ 마지막 2026-11-18 (0일 전) |
 | NewsDeliver | 국내 뉴스 수집 | ✅ 가장 최근 기사 0.3시간 전 |
-| NewsDeliver | 해외 뉴스 수집 | ✅ 가장 최근 기사 0.5시간 전 |
+| NewsDeliver | 해외 뉴스 수집 | ✅ 가장 최근 기사 0.1시간 전 |
 
 <details><summary>건너뛴 API 목록</summary>
 
