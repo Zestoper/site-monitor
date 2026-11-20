@@ -49,6 +49,8 @@ for d in "$TMP"/reports/[0-9][0-9]-[0-9][0-9]-[0-9][0-9]; do
   done
   # 주 1회 기능 시나리오는 따로 둔다
   for sc in "$d"/시나리오_*.md; do [ -f "$sc" ] && cp "$sc" "$OUT/$day/"; done
+  # 주 1회 가전무쌍 가격 점검도 따로 둔다
+  for pa in "$d"/가격점검_*.md; do [ -f "$pa" ] && cp "$pa" "$OUT/$day/"; done
 done
 rm -rf "$TMP"
 

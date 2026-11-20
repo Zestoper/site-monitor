@@ -9,6 +9,7 @@
 | 페이지 | `check.mjs` | 매일 07:13 | 공개 페이지 + 로그인 후 페이지를 열어 콘솔 에러 · JS 예외 · API 실패 · 빈 화면 · `NaN` 같은 이상한 글자 · 느림을 찾음 |
 | API 전체 | `api-check.mjs` | 매일 07:13 | `/openapi.json`에서 API 목록을 읽어 조회용(GET) API를 하나씩 호출해 500 에러 · 시간 초과 · 첫 요청만 실패하는 문제를 찾음 |
 | 기능 시나리오 | `scenarios.mjs` | 매주 월 07:43 | 핵심 기능을 실제로 돌려봄 (AI 사용량이 들어 주 1회) |
+| 가전무쌍 가격 점검 | 가전무쌍 `backend/scripts/audit_prices.py` | 매주 월 08:47 | DB에 쓰레기 가격(소모품 · 튀는 값)이 새어 들어왔는지 확인 (지우지 않음 · Secret `GAJEON_DATABASE_URL` 필요) |
 
 ### 기능 시나리오
 - 가전무쌍: 제품 검색 → 분석 → 수요 예측 · 안전사고 · 날씨 카드 확인 (읽기만)
@@ -29,7 +30,8 @@ reports/
 ├─ 26-11-09/
 │   ├─ 점검_07-13.md      페이지
 │   ├─ API_07-13.md       API 전체
-│   └─ 시나리오_07-43.md  기능 시나리오 (월요일)
+│   ├─ 시나리오_07-43.md  기능 시나리오 (월요일)
+│   └─ 가격점검_08-47.md  가전무쌍 가격 점검 (월요일)
 ├─ latest.md · latest-API.md · latest-시나리오.md
 ```
 문제가 있으면 `site-check` 라벨로 GitHub 이슈가 열립니다.
@@ -37,7 +39,7 @@ reports/
 ## 설정
 - 테스트 계정: Secrets에 `<ID>_EMAIL` / `<ID>_PASSWORD` (ID = GAJEON · PERSONA · MOODIARY · NEATLY · CLEARWAY · NEWSDELIVER). NewsDeliver는 이메일 자리에 아이디를 넣습니다.
 - 점검할 페이지 · 무시할 메시지 · API 필수 값: `sites.json`
-- 손으로 실행: Actions → Site check 또는 Scenario check → Run workflow (시나리오는 사이트 하나만 고를 수 있음)
+- 손으로 실행: Actions → Site check · Scenario check · Price audit → Run workflow (시나리오는 사이트 하나만 고를 수 있음)
 
 ## Mac에서 결과 받기
 ```

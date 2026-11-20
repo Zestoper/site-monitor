@@ -1,0 +1,67 @@
+# 매주 가전무쌍 가격 기록 점검 (지우지 않고 의심 목록만 리포트로 남김)
+# 검색 · 계산 · 저장 단계 필터를 빠져나간 쓰레기 가격이 있는지 확인한다.
+# 결과는 reports/날짜/가격점검_시각.md 로 저장되고 pull-report.sh 가 Mac의 '사이트점검' 폴더로 가져온다.
+# 점검 코드는 가전무쌍 저장소(공개)의 backend/scripts/audit_prices.py 를 그대로 쓴다.
+# 필요한 Secret: GAJEON_DATABASE_URL (가전무쌍 backend/.env 의 DATABASE_URL 과 같은 값)
+name: Price audit
+
+on:
+  schedule:
+    - cron: '47 23 * * 0'   # 매주 월요일 08:47 KST
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-monitor
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          repository: Zestoper/appliance_trend_insight
+          ref: dev
+          path: gajeon
+          sparse-checkout: backend
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run audit
+        env:
+          DATABASE_URL: ${{ secrets.GAJEON_DATABASE_URL }}
+        run: |
+          day=$(TZ=Asia/Seoul date '+%y-%m-%d'); t=$(TZ=Asia/Seoul date '+%H-%M')
+          mkdir -p "reports/$day"
+          pip install --quiet asyncpg python-dotenv
+          code=0
+          (cd gajeon/backend && python scripts/audit_prices.py --fail-if-found) > audit.txt 2>&1 || code=$?
+          if [ "$code" = "0" ]; then status="✅ 의심 기록 없음"; else status="⚠️ 의심 기록 있음 — 내용 확인 후 지울지 판단"; fi
+          {
+            echo "# 가전무쌍 가격 점검 — $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
+            echo
+            echo "**$status**"
+            echo
+            echo '```'
+            cat audit.txt
+            echo '```'
+            echo
+            echo '지우기 (가전무쌍 backend 폴더에서): `python3 scripts/audit_prices.py --delete` · 튀는 값은 `--fix KEY=최소~최대`'
+          } > "reports/$day/가격점검_$t.md"
+          cat "reports/$day/가격점검_$t.md"
+
+      - name: Save report to repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports
+          git diff --cached --quiet || git commit -m "price-audit: $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
+          git pull --rebase --quiet && git push
