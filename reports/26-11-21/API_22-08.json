@@ -1,0 +1,863 @@
+[
+  {
+    "site": "가전무쌍",
+    "backend": "https://appliance-trend-insight.onrender.com",
+    "checked": [
+      {
+        "path": "/api/insights/rag-status",
+        "status": 200,
+        "ms": 1097
+      },
+      {
+        "path": "/api/naver/products",
+        "status": 200,
+        "ms": 7686
+      },
+      {
+        "path": "/api/best-price",
+        "status": 200,
+        "ms": 2116
+      },
+      {
+        "path": "/api/naver/news",
+        "status": 200,
+        "ms": 1182
+      },
+      {
+        "path": "/api/naver/datalab",
+        "status": 200,
+        "ms": 706
+      },
+      {
+        "path": "/api/youtube/search",
+        "status": 200,
+        "ms": 313
+      },
+      {
+        "path": "/api/ppomppu",
+        "status": 200,
+        "ms": 834
+      },
+      {
+        "path": "/api/naver/product-image",
+        "status": 200,
+        "ms": 104
+      },
+      {
+        "path": "/api/auth/me",
+        "status": 200,
+        "ms": 1225
+      },
+      {
+        "path": "/api/admin/pending-users",
+        "status": 200,
+        "ms": 478
+      },
+      {
+        "path": "/api/admin/b2b-users",
+        "status": 200,
+        "ms": 489
+      },
+      {
+        "path": "/api/user/me",
+        "status": 200,
+        "ms": 2683
+      },
+      {
+        "path": "/api/user/alerts",
+        "status": 200,
+        "ms": 459
+      },
+      {
+        "path": "/api/timing",
+        "status": 200,
+        "ms": 29312
+      },
+      {
+        "path": "/api/trend",
+        "status": 200,
+        "ms": 813
+      },
+      {
+        "path": "/api/user-reviews",
+        "status": 200,
+        "ms": 950
+      },
+      {
+        "path": "/api/price-position",
+        "status": 200,
+        "ms": 1163
+      },
+      {
+        "path": "/api/b2b/price-monitor",
+        "status": 200,
+        "ms": 1973
+      },
+      {
+        "path": "/api/b2b/product-price",
+        "status": 200,
+        "ms": 6410
+      },
+      {
+        "path": "/api/b2b/product-search",
+        "status": 200,
+        "ms": 1388
+      },
+      {
+        "path": "/api/b2b/public-data-status",
+        "status": 200,
+        "ms": 9004
+      },
+      {
+        "path": "/",
+        "status": 200,
+        "ms": 100
+      }
+    ],
+    "skipped": [
+      "/api/auth/password-reset/check (제외 목록)",
+      "/api/recommend (제외 목록)",
+      "/api/report (제외 목록)",
+      "/api/ai-analysis (제외 목록)",
+      "/api/ai-compare (제외 목록)",
+      "/api/b2b/export-report (제외 목록)",
+      "/api/b2b/search-analysis (제외 목록)",
+      "/api/b2b/backtest (제외 목록)",
+      "/api/b2b/backtest-weather (제외 목록)",
+      "/api/auth/{provider}/login (경로 값 못 찾음)",
+      "/api/auth/{provider}/callback (제외 목록)"
+    ],
+    "issues": [],
+    "warnings": [
+      {
+        "path": "/api/naver/products",
+        "detail": "첫 요청만 실패 (503) → 다시 하니 200"
+      },
+      {
+        "path": "/api/timing",
+        "detail": "느림 29.3초"
+      }
+    ],
+    "wake": {
+      "ok": true,
+      "ms": 184
+    },
+    "auth": "성공",
+    "fresh": [
+      {
+        "name": "가격 수집",
+        "bad": false,
+        "detail": "마지막 2026-11-20 (1일 전)"
+      },
+      {
+        "name": "기상청 날씨",
+        "bad": false,
+        "detail": "마지막 2026-11-19 (2일 전)"
+      },
+      {
+        "name": "에어코리아 미세먼지",
+        "bad": false,
+        "detail": "마지막 2026-11-20 (1일 전)"
+      }
+    ]
+  },
+  {
+    "site": "Persona",
+    "backend": "https://persona-5x3w.onrender.com",
+    "checked": [
+      {
+        "path": "/api/v1/auth/me",
+        "status": 200,
+        "ms": 1188
+      },
+      {
+        "path": "/api/v1/personas/me",
+        "status": 200,
+        "ms": 751
+      },
+      {
+        "path": "/api/v1/personas/public",
+        "status": 200,
+        "ms": 535
+      },
+      {
+        "path": "/api/v1/favorites",
+        "status": 200,
+        "ms": 599
+      },
+      {
+        "path": "/api/v1/favorites/ids",
+        "status": 200,
+        "ms": 422
+      },
+      {
+        "path": "/api/v1/conversations/me",
+        "status": 200,
+        "ms": 664
+      },
+      {
+        "path": "/api/v1/admin/stats",
+        "status": 403,
+        "ms": 293
+      },
+      {
+        "path": "/api/v1/admin/users",
+        "status": 403,
+        "ms": 277
+      },
+      {
+        "path": "/api/v1/admin/personas",
+        "status": 403,
+        "ms": 309
+      },
+      {
+        "path": "/api/v1/admin/reports",
+        "status": 403,
+        "ms": 275
+      },
+      {
+        "path": "/health",
+        "status": 200,
+        "ms": 108
+      },
+      {
+        "path": "/",
+        "status": 200,
+        "ms": 86
+      },
+      {
+        "path": "/api/v1/personas/{persona_id}",
+        "status": 200,
+        "ms": 481
+      },
+      {
+        "path": "/api/v1/personas/{persona_id}/lore",
+        "status": 200,
+        "ms": 522
+      }
+    ],
+    "skipped": [
+      "/api/v1/auth/password-reset/check (제외 목록)",
+      "/api/v1/collections (제외 목록)",
+      "/api/v1/auth/{provider}/login (경로 값 못 찾음)",
+      "/api/v1/auth/{provider}/callback (제외 목록)",
+      "/api/v1/collections/{collection_id} (제외 목록)"
+    ],
+    "issues": [],
+    "warnings": [],
+    "wake": {
+      "ok": true,
+      "ms": 204
+    },
+    "auth": "성공"
+  },
+  {
+    "site": "Moodiary",
+    "backend": "https://moodiary-0she.onrender.com",
+    "checked": [
+      {
+        "path": "/api/auth/me",
+        "status": 200,
+        "ms": 1703
+      },
+      {
+        "path": "/api/diary/",
+        "status": 200,
+        "ms": 967
+      },
+      {
+        "path": "/api/chat/history",
+        "status": 200,
+        "ms": 973
+      },
+      {
+        "path": "/api/consult/",
+        "status": 200,
+        "ms": 982
+      },
+      {
+        "path": "/api/music/recommend",
+        "status": 200,
+        "ms": 869
+      },
+      {
+        "path": "/api/admin/stats",
+        "status": 403,
+        "ms": 801
+      },
+      {
+        "path": "/api/admin/users",
+        "status": 403,
+        "ms": 790
+      },
+      {
+        "path": "/api/admin/ai-usage",
+        "status": 403,
+        "ms": 803
+      },
+      {
+        "path": "/",
+        "status": 200,
+        "ms": 283
+      },
+      {
+        "path": "/health",
+        "status": 200,
+        "ms": 109
+      },
+      {
+        "path": "/api/diary/{diary_id}",
+        "status": 200,
+        "ms": 977
+      }
+    ],
+    "skipped": [
+      "/api/report/monthly (제외 목록)",
+      "/api/report/recap (제외 목록)",
+      "/api/payment/packages (제외 목록)",
+      "/api/payment/history (제외 목록)",
+      "/api/admin/payments (제외 목록)",
+      "/api/auth/{provider}/login (경로 값 못 찾음)",
+      "/api/auth/{provider}/callback (제외 목록)",
+      "/api/consult/{consult_id} (경로 값 못 찾음)"
+    ],
+    "issues": [],
+    "warnings": [],
+    "wake": {
+      "ok": true,
+      "ms": 195
+    },
+    "auth": "성공"
+  },
+  {
+    "site": "Neatly",
+    "backend": "https://neatly-backend-xzdm.onrender.com",
+    "checked": [
+      {
+        "path": "/health",
+        "status": 200,
+        "ms": 96
+      },
+      {
+        "path": "/documents",
+        "status": 200,
+        "ms": 2122
+      },
+      {
+        "path": "/documents/trash",
+        "status": 200,
+        "ms": 810
+      },
+      {
+        "path": "/users/search",
+        "status": 200,
+        "ms": 574
+      },
+      {
+        "path": "/folders",
+        "status": 200,
+        "ms": 586
+      },
+      {
+        "path": "/auth/me",
+        "status": 200,
+        "ms": 451
+      },
+      {
+        "path": "/emails",
+        "status": 400,
+        "ms": 603
+      },
+      {
+        "path": "/tags",
+        "status": 200,
+        "ms": 591
+      },
+      {
+        "path": "/email-filters",
+        "status": 200,
+        "ms": 550
+      },
+      {
+        "path": "/search",
+        "status": 200,
+        "ms": 446
+      },
+      {
+        "path": "/briefing/date",
+        "status": 200,
+        "ms": 722
+      },
+      {
+        "path": "/chat/rooms",
+        "status": 200,
+        "ms": 573
+      },
+      {
+        "path": "/chat/contacts",
+        "status": 200,
+        "ms": 575
+      },
+      {
+        "path": "/friends",
+        "status": 200,
+        "ms": 579
+      },
+      {
+        "path": "/calendar/events",
+        "status": 200,
+        "ms": 1336
+      },
+      {
+        "path": "/calendar/events/today",
+        "status": 200,
+        "ms": 838
+      },
+      {
+        "path": "/calendar/suggestions",
+        "status": 200,
+        "ms": 794
+      },
+      {
+        "path": "/documents/{document_id}",
+        "status": 200,
+        "ms": 937
+      }
+    ],
+    "skipped": [
+      "/auth/gmail (제외 목록)",
+      "/auth/gmail/callback (제외 목록)",
+      "/briefing/today (제외 목록)",
+      "/emails/sync/status (제외 목록)",
+      "/auth/social/{provider}/login (경로 값 못 찾음)",
+      "/auth/social/{provider}/callback (제외 목록)",
+      "/emails/{message_id} (경로 값 못 찾음)",
+      "/chat/rooms/{room_id}/messages (경로 값 못 찾음)",
+      "/chat/rooms/{room_id}/read-status (경로 값 못 찾음)"
+    ],
+    "issues": [],
+    "warnings": [],
+    "wake": {
+      "ok": true,
+      "ms": 133
+    },
+    "auth": "성공"
+  },
+  {
+    "site": "ClearWay",
+    "backend": "https://clearway-3z2c.onrender.com",
+    "checked": [
+      {
+        "path": "/api/v1/health",
+        "status": 200,
+        "ms": 102
+      },
+      {
+        "path": "/api/v1/auth/me",
+        "status": 200,
+        "ms": 358
+      },
+      {
+        "path": "/api/v1/users/me",
+        "status": 200,
+        "ms": 347
+      },
+      {
+        "path": "/api/v1/users/me/newsletter",
+        "status": 200,
+        "ms": 363
+      },
+      {
+        "path": "/api/v1/users/me/email-notifications",
+        "status": 200,
+        "ms": 346
+      },
+      {
+        "path": "/api/v1/flights",
+        "status": 200,
+        "ms": 737
+      },
+      {
+        "path": "/api/v1/bookings/me",
+        "status": 200,
+        "ms": 1010
+      },
+      {
+        "path": "/api/v1/admin/stats",
+        "status": 403,
+        "ms": 367
+      },
+      {
+        "path": "/api/v1/admin/flights",
+        "status": 403,
+        "ms": 345
+      },
+      {
+        "path": "/api/v1/admin/members",
+        "status": 403,
+        "ms": 365
+      },
+      {
+        "path": "/api/v1/admin/bookings",
+        "status": 403,
+        "ms": 330
+      },
+      {
+        "path": "/api/v1/admin/revenue-stats",
+        "status": 403,
+        "ms": 345
+      },
+      {
+        "path": "/api/v1/admin/newsletter",
+        "status": 403,
+        "ms": 333
+      },
+      {
+        "path": "/api/v1/admin/newsletter/subscribers",
+        "status": 403,
+        "ms": 347
+      },
+      {
+        "path": "/api/v1/admin/popular-routes",
+        "status": 403,
+        "ms": 342
+      },
+      {
+        "path": "/api/v1/notices",
+        "status": 200,
+        "ms": 345
+      },
+      {
+        "path": "/api/v1/cs/faqs",
+        "status": 200,
+        "ms": 341
+      },
+      {
+        "path": "/api/v1/cs/inquiries",
+        "status": 403,
+        "ms": 345
+      },
+      {
+        "path": "/api/v1/cs/inquiries/me",
+        "status": 200,
+        "ms": 404
+      },
+      {
+        "path": "/api/v1/nextrip/plans",
+        "status": 200,
+        "ms": 419
+      },
+      {
+        "path": "/api/v1/chat/rooms",
+        "status": 403,
+        "ms": 322
+      },
+      {
+        "path": "/api/v1/chat/rooms/mine",
+        "status": 200,
+        "ms": 432
+      },
+      {
+        "path": "/api/v1/reviews",
+        "status": 200,
+        "ms": 326
+      },
+      {
+        "path": "/api/v1/reviews/me",
+        "status": 200,
+        "ms": 406
+      },
+      {
+        "path": "/api/v1/flight-status",
+        "status": 429,
+        "ms": 1123
+      },
+      {
+        "path": "/health",
+        "status": 200,
+        "ms": 108
+      },
+      {
+        "path": "/api/v1/flights/{flight_id}",
+        "status": 200,
+        "ms": 329
+      },
+      {
+        "path": "/api/v1/bookings/{booking_ref}",
+        "status": 200,
+        "ms": 480
+      },
+      {
+        "path": "/api/v1/nextrip/plans/{plan_id}",
+        "status": 200,
+        "ms": 390
+      }
+    ],
+    "skipped": [
+      "/api/v1/bookings/lookup (제외 목록)",
+      "/api/v1/admin/flight-sync/status (제외 목록)",
+      "/api/v1/auth/{provider}/login (경로 값 못 찾음)",
+      "/api/v1/auth/{provider}/callback (제외 목록)",
+      "/api/v1/flights/{flight_id}/seats (필수 값 모름)",
+      "/api/v1/notices/{notice_id} (경로 값 못 찾음)",
+      "/api/v1/chat/rooms/{room_id}/messages (경로 값 못 찾음)"
+    ],
+    "issues": [],
+    "warnings": [],
+    "wake": {
+      "ok": true,
+      "ms": 348
+    },
+    "auth": "성공"
+  },
+  {
+    "site": "NewsDeliver",
+    "backend": "https://newsdeliver.onrender.com",
+    "checked": [
+      {
+        "path": "/",
+        "status": 200,
+        "ms": 3786
+      },
+      {
+        "path": "/admin",
+        "status": 200,
+        "ms": 632
+      },
+      {
+        "path": "/login",
+        "status": 200,
+        "ms": 618
+      },
+      {
+        "path": "/signup",
+        "status": 200,
+        "ms": 640
+      },
+      {
+        "path": "/subscribe",
+        "status": 200,
+        "ms": 2382
+      },
+      {
+        "path": "/mypage",
+        "status": 200,
+        "ms": 2366
+      },
+      {
+        "path": "/news",
+        "status": 200,
+        "ms": 2011
+      },
+      {
+        "path": "/global-news",
+        "status": 200,
+        "ms": 1772
+      },
+      {
+        "path": "/search",
+        "status": 200,
+        "ms": 2003
+      },
+      {
+        "path": "/about",
+        "status": 200,
+        "ms": 614
+      },
+      {
+        "path": "/contact",
+        "status": 200,
+        "ms": 615
+      },
+      {
+        "path": "/categories",
+        "status": 200,
+        "ms": 607
+      },
+      {
+        "path": "/api/age-news",
+        "status": 200,
+        "ms": 770
+      },
+      {
+        "path": "/api/market",
+        "status": 200,
+        "ms": 1257
+      },
+      {
+        "path": "/api/users",
+        "status": 200,
+        "ms": 1139
+      },
+      {
+        "path": "/api/news",
+        "status": 200,
+        "ms": 3148
+      },
+      {
+        "path": "/press/signup",
+        "status": 200,
+        "ms": 615
+      },
+      {
+        "path": "/press/write",
+        "status": 200,
+        "ms": 1256
+      },
+      {
+        "path": "/press/news",
+        "status": 200,
+        "ms": 1240
+      },
+      {
+        "path": "/api/admin/newsletter-status",
+        "status": 200,
+        "ms": 632
+      },
+      {
+        "path": "/api/admin/subscribers",
+        "status": 200,
+        "ms": 1134
+      },
+      {
+        "path": "/api/admin/reports",
+        "status": 200,
+        "ms": 1135
+      },
+      {
+        "path": "/api/admin/press-members",
+        "status": 200,
+        "ms": 1146
+      },
+      {
+        "path": "/api/admin/stats",
+        "status": 200,
+        "ms": 2577
+      },
+      {
+        "path": "/api/chat/room",
+        "status": 200,
+        "ms": 1134
+      },
+      {
+        "path": "/api/chat/my-rooms",
+        "status": 200,
+        "ms": 1131
+      },
+      {
+        "path": "/api/chat/rooms",
+        "status": 200,
+        "ms": 1148
+      },
+      {
+        "path": "/api/chat/unread",
+        "status": 200,
+        "ms": 1328
+      },
+      {
+        "path": "/api/v1/auth/providers",
+        "status": 200,
+        "ms": 88
+      },
+      {
+        "path": "/api/v1/auth/me",
+        "status": 200,
+        "ms": 622
+      },
+      {
+        "path": "/api/v1/home",
+        "status": 200,
+        "ms": 3172
+      },
+      {
+        "path": "/api/v1/news",
+        "status": 200,
+        "ms": 1886
+      },
+      {
+        "path": "/api/v1/global-news",
+        "status": 200,
+        "ms": 1434
+      },
+      {
+        "path": "/api/v1/search",
+        "status": 200,
+        "ms": 1335
+      },
+      {
+        "path": "/api/v1/subscribe",
+        "status": 200,
+        "ms": 1658
+      },
+      {
+        "path": "/api/v1/mypage",
+        "status": 200,
+        "ms": 1848
+      },
+      {
+        "path": "/health",
+        "status": 200,
+        "ms": 86
+      },
+      {
+        "path": "/age-news/{group}",
+        "status": 200,
+        "ms": 1602
+      },
+      {
+        "path": "/api/news/{news_id}",
+        "status": 200,
+        "ms": 1130
+      },
+      {
+        "path": "/api/v1/news/{news_id}",
+        "status": 200,
+        "ms": 2595
+      },
+      {
+        "path": "/api/v1/age-news/{group}",
+        "status": 200,
+        "ms": 1078
+      }
+    ],
+    "skipped": [
+      "/auth/sso (제외 목록)",
+      "/logout (제외 목록)",
+      "/subscribe/payment/success (제외 목록)",
+      "/subscribe/payment/fail (제외 목록)",
+      "/verify-email (제외 목록)",
+      "/api/admin/fetch-status (제외 목록)",
+      "/api/v1/auth/password-reset/check (제외 목록)",
+      "/internal/jobs/fetch-news (제외 목록)",
+      "/internal/jobs/newsletter (제외 목록)",
+      "/oauth/{provider}/login (제외 목록)",
+      "/oauth/{provider} (제외 목록)",
+      "/oauth/{provider}/callback (제외 목록)",
+      "/news/{news_id} (경로 값 못 찾음)",
+      "/news/{news_id}/delete (제외 목록)",
+      "/news/{news_id}/comments (경로 값 못 찾음)",
+      "/press/edit/{news_id} (제외 목록)",
+      "/press/delete/{news_id} (제외 목록)",
+      "/api/chat/room/{room_id}/messages (경로 값 못 찾음)"
+    ],
+    "issues": [],
+    "warnings": [],
+    "wake": {
+      "ok": true,
+      "ms": 129
+    },
+    "auth": "성공",
+    "fresh": [
+      {
+        "name": "국내 뉴스 수집",
+        "bad": false,
+        "detail": "가장 최근 기사 0.3시간 전"
+      },
+      {
+        "name": "해외 뉴스 수집",
+        "bad": false,
+        "detail": "가장 최근 기사 0.2시간 전"
+      }
+    ]
+  }
+]
