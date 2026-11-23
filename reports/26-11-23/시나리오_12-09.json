@@ -1,0 +1,169 @@
+[
+  {
+    "site": "가전무쌍",
+    "steps": [
+      {
+        "name": "로그인",
+        "result": "ok",
+        "detail": ""
+      },
+      {
+        "name": "제품 검색",
+        "result": "ok",
+        "detail": "30개 · 등급 0개"
+      },
+      {
+        "name": "분석",
+        "result": "ok",
+        "detail": "30초 · LG전자 휘센 PW0830R2L"
+      },
+      {
+        "name": "수요 예측",
+        "result": "ok",
+        "detail": ""
+      },
+      {
+        "name": "안전사고 TOP 3",
+        "result": "ok",
+        "detail": "90건"
+      },
+      {
+        "name": "날씨 카드",
+        "result": "ok",
+        "detail": ""
+      },
+      {
+        "name": "AI 리포트",
+        "result": "ok",
+        "detail": ""
+      },
+      {
+        "name": "이상한 값",
+        "result": "warn",
+        "detail": "응답에 \"+-0\" 포함"
+      }
+    ],
+    "failed": 0,
+    "warned": 1
+  },
+  {
+    "site": "Persona",
+    "steps": [
+      {
+        "name": "로그인",
+        "result": "ok",
+        "detail": ""
+      },
+      {
+        "name": "캐릭터 목록",
+        "result": "ok",
+        "detail": "20개 · 츤데레 여자친구 아린"
+      },
+      {
+        "name": "AI 채팅",
+        "result": "ok",
+        "detail": "\"아린이라고 해. 겉은 차갑게 굴지만, 사실은 늘 네가 뭘 원하는지 챙겨주…\""
+      },
+      {
+        "name": "테스트 대화 지우기",
+        "result": "ok",
+        "detail": ""
+      }
+    ],
+    "failed": 0,
+    "warned": 0
+  },
+  {
+    "site": "Moodiary",
+    "steps": [
+      {
+        "name": "로그인",
+        "result": "ok",
+        "detail": ""
+      },
+      {
+        "name": "일기 쓰기",
+        "result": "ok",
+        "detail": "6초"
+      },
+      {
+        "name": "감정 분석",
+        "result": "ok",
+        "detail": "기쁨,설렘,감사 · 5점"
+      },
+      {
+        "name": "테스트 일기 삭제",
+        "result": "ok",
+        "detail": ""
+      }
+    ],
+    "failed": 0,
+    "warned": 0
+  },
+  {
+    "site": "Neatly",
+    "steps": [
+      {
+        "name": "로그인",
+        "result": "ok",
+        "detail": ""
+      },
+      {
+        "name": "문서 업로드",
+        "result": "ok",
+        "detail": "3초"
+      },
+      {
+        "name": "AI 요약",
+        "result": "ok",
+        "detail": "\"자동 점검용 테스트 문서는 Neatly의 AI 요약 기능을 검증하기 위해…\""
+      },
+      {
+        "name": "테스트 문서 삭제",
+        "result": "ok",
+        "detail": ""
+      }
+    ],
+    "failed": 0,
+    "warned": 0
+  },
+  {
+    "site": "ClearWay",
+    "steps": [
+      {
+        "name": "로그인",
+        "result": "ok",
+        "detail": ""
+      },
+      {
+        "name": "항공편 검색",
+        "result": "ok",
+        "detail": "인천 출발 20편"
+      },
+      {
+        "name": "후기",
+        "result": "ok",
+        "detail": "0개"
+      },
+      {
+        "name": "이벤트 공지",
+        "result": "ok",
+        "detail": "0개"
+      }
+    ],
+    "failed": 0,
+    "warned": 0
+  },
+  {
+    "site": "NewsDeliver",
+    "steps": [
+      {
+        "name": "로그인",
+        "result": "fail",
+        "detail": "HTTP 500 "
+      }
+    ],
+    "failed": 1,
+    "warned": 0
+  }
+]
