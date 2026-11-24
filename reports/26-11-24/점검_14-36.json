@@ -1,0 +1,425 @@
+{
+  "stamp": "2026-11-24 14:36",
+  "total": 2,
+  "results": [
+    {
+      "site": "가전무쌍",
+      "wake": {
+        "ok": true,
+        "ms": 116,
+        "status": 200
+      },
+      "auth": {
+        "tried": true,
+        "ok": true
+      },
+      "pages": [
+        {
+          "path": "/",
+          "status": 200,
+          "ms": 2280,
+          "issues": [],
+          "retried": true
+        },
+        {
+          "path": "/login",
+          "status": 200,
+          "ms": 2274,
+          "issues": []
+        },
+        {
+          "path": "/signup",
+          "status": 200,
+          "ms": 2147,
+          "issues": []
+        },
+        {
+          "path": "/b2b/pricing",
+          "status": 200,
+          "ms": 2075,
+          "issues": []
+        },
+        {
+          "path": "/home",
+          "status": 200,
+          "ms": 4782,
+          "issues": []
+        },
+        {
+          "path": "/b2b",
+          "status": 200,
+          "ms": 4802,
+          "issues": []
+        },
+        {
+          "path": "/b2b/analysis",
+          "status": 200,
+          "ms": 4770,
+          "issues": []
+        },
+        {
+          "path": "/trend",
+          "status": 200,
+          "ms": 5552,
+          "issues": []
+        },
+        {
+          "path": "/timing",
+          "status": 200,
+          "ms": 5568,
+          "issues": []
+        },
+        {
+          "path": "/compare",
+          "status": 200,
+          "ms": 5179,
+          "issues": []
+        },
+        {
+          "path": "/recommend",
+          "status": 200,
+          "ms": 5167,
+          "issues": []
+        },
+        {
+          "path": "/chat",
+          "status": 200,
+          "ms": 5069,
+          "issues": []
+        },
+        {
+          "path": "/mypage",
+          "status": 200,
+          "ms": 5884,
+          "issues": []
+        }
+      ],
+      "count": 0
+    },
+    {
+      "site": "Persona",
+      "wake": {
+        "ok": true,
+        "ms": 31159,
+        "status": 200
+      },
+      "auth": {
+        "tried": true,
+        "ok": true
+      },
+      "pages": [
+        {
+          "path": "/",
+          "status": 200,
+          "ms": 3173,
+          "issues": []
+        },
+        {
+          "path": "/marketplace",
+          "status": 200,
+          "ms": 2778,
+          "issues": []
+        },
+        {
+          "path": "/pricing",
+          "status": 200,
+          "ms": 2243,
+          "issues": []
+        },
+        {
+          "path": "/login",
+          "status": 200,
+          "ms": 2361,
+          "issues": []
+        },
+        {
+          "path": "/register",
+          "status": 200,
+          "ms": 2454,
+          "issues": []
+        },
+        {
+          "path": "/my",
+          "status": 200,
+          "ms": 2955,
+          "issues": []
+        },
+        {
+          "path": "/favorites",
+          "status": 200,
+          "ms": 2765,
+          "issues": []
+        },
+        {
+          "path": "/conversations",
+          "status": 200,
+          "ms": 3064,
+          "issues": []
+        },
+        {
+          "path": "/collections",
+          "status": 200,
+          "ms": 4498,
+          "issues": []
+        },
+        {
+          "path": "/create",
+          "status": 200,
+          "ms": 2365,
+          "issues": []
+        },
+        {
+          "path": "/profile",
+          "status": 200,
+          "ms": 2361,
+          "issues": []
+        }
+      ],
+      "count": 0
+    },
+    {
+      "site": "Moodiary",
+      "wake": {
+        "ok": true,
+        "ms": 36169,
+        "status": 200
+      },
+      "auth": {
+        "tried": true,
+        "ok": true
+      },
+      "pages": [
+        {
+          "path": "/login",
+          "status": 200,
+          "ms": 2516,
+          "issues": []
+        },
+        {
+          "path": "/diary",
+          "status": 200,
+          "ms": 4090,
+          "issues": []
+        },
+        {
+          "path": "/calendar",
+          "status": 200,
+          "ms": 3068,
+          "issues": []
+        },
+        {
+          "path": "/chat",
+          "status": 200,
+          "ms": 3165,
+          "issues": []
+        },
+        {
+          "path": "/consult",
+          "status": 200,
+          "ms": 3154,
+          "issues": []
+        },
+        {
+          "path": "/recap",
+          "status": 200,
+          "ms": 4076,
+          "issues": []
+        },
+        {
+          "path": "/profile",
+          "status": 200,
+          "ms": 3058,
+          "issues": []
+        },
+        {
+          "path": "/payment",
+          "status": 200,
+          "ms": 3092,
+          "issues": []
+        }
+      ],
+      "count": 0
+    },
+    {
+      "site": "Neatly",
+      "wake": {
+        "ok": true,
+        "ms": 36415,
+        "status": 200
+      },
+      "auth": {
+        "tried": true,
+        "ok": true
+      },
+      "pages": [
+        {
+          "path": "/",
+          "status": 200,
+          "ms": 2900,
+          "issues": []
+        },
+        {
+          "path": "/login",
+          "status": 200,
+          "ms": 2366,
+          "issues": []
+        },
+        {
+          "path": "/register",
+          "status": 200,
+          "ms": 2441,
+          "issues": []
+        },
+        {
+          "path": "/plans",
+          "status": 200,
+          "ms": 2393,
+          "issues": []
+        },
+        {
+          "path": "/dashboard",
+          "status": 200,
+          "ms": 6672,
+          "issues": []
+        },
+        {
+          "path": "/documents",
+          "status": 200,
+          "ms": 5562,
+          "issues": []
+        },
+        {
+          "path": "/emails",
+          "status": 200,
+          "ms": 4703,
+          "issues": []
+        },
+        {
+          "path": "/calendar",
+          "status": 200,
+          "ms": 5200,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to XMLHttpRequest at 'https://neatly-backend-xzdm.onrender.com/calendar/suggestions' from origin 'https://neatly-wheat.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /calendar/suggestions (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
+        },
+        {
+          "path": "/insights",
+          "status": 200,
+          "ms": 5165,
+          "issues": []
+        },
+        {
+          "path": "/search",
+          "status": 200,
+          "ms": 5068,
+          "issues": []
+        },
+        {
+          "path": "/settings",
+          "status": 200,
+          "ms": 4070,
+          "issues": []
+        },
+        {
+          "path": "/trash",
+          "status": 200,
+          "ms": 4062,
+          "issues": []
+        }
+      ],
+      "count": 2
+    },
+    {
+      "site": "ClearWay",
+      "wake": {
+        "ok": true,
+        "ms": 31374,
+        "status": 200
+      },
+      "auth": {
+        "tried": false
+      },
+      "pages": [
+        {
+          "path": "/",
+          "status": 200,
+          "ms": 3369,
+          "issues": []
+        }
+      ],
+      "count": 0
+    },
+    {
+      "site": "NewsDeliver",
+      "wake": {
+        "ok": true,
+        "ms": 77,
+        "status": 200
+      },
+      "auth": {
+        "tried": true,
+        "ok": true
+      },
+      "pages": [
+        {
+          "path": "/",
+          "status": 200,
+          "ms": 7213,
+          "issues": [],
+          "retried": true
+        },
+        {
+          "path": "/news",
+          "status": 200,
+          "ms": 5571,
+          "issues": []
+        },
+        {
+          "path": "/global-news",
+          "status": 200,
+          "ms": 3959,
+          "issues": []
+        },
+        {
+          "path": "/search",
+          "status": 200,
+          "ms": 3864,
+          "issues": []
+        },
+        {
+          "path": "/about",
+          "status": 200,
+          "ms": 2263,
+          "issues": []
+        },
+        {
+          "path": "/subscribe",
+          "status": 200,
+          "ms": 2963,
+          "issues": []
+        },
+        {
+          "path": "/login",
+          "status": 200,
+          "ms": 2248,
+          "issues": []
+        },
+        {
+          "path": "/mypage",
+          "status": 200,
+          "ms": 5459,
+          "issues": []
+        }
+      ],
+      "count": 0
+    }
+  ]
+}
