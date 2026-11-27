@@ -1,10 +1,10 @@
-# API 전체 점검 (2026-11-27 12:54 KST)
+# API 전체 점검 (2026-11-27 23:29 KST)
 
-**문제 1건** · 주의 0건
+**문제 5건** · 주의 0건
 
 | 사이트 | 결과 | 확인한 API | 주의 | 건너뜀 | 로그인 |
 |---|---|---|---|---|---|
-| 가전무쌍 | ❌ 1건 | 22개 | 0 | 12 | 성공 |
+| 가전무쌍 | ❌ 5건 | 22개 | 0 | 12 | 성공 |
 | Persona | ✅ | 14개 | 0 | 5 | 성공 |
 | Moodiary | ✅ | 11개 | 0 | 8 | 성공 |
 | Neatly | ✅ | 18개 | 0 | 9 | 성공 |
@@ -14,6 +14,10 @@
 ## 가전무쌍
 https://appliance-trend-insight.onrender.com
 
+- ❌ `/api/naver/products?query=%EC%97%90%EC%96%B4%EC%BB%A8` HTTP 503 상품 정보를 가져오는 다나와가 점검 중이에요. 잠시 후 다시 시도해 주세요.
+- ❌ `/api/best-price?query=%EC%97%90%EC%96%B4%EC%BB%A8` HTTP 500 Internal Server Error
+- ❌ `/api/naver/product-image?query=%EC%97%90%EC%96%B4%EC%BB%A8` HTTP 500 Internal Server Error
+- ❌ `/api/b2b/product-search?q=%EC%97%90%EC%96%B4%EC%BB%A8` HTTP 503 상품 정보를 가져오는 다나와가 점검 중이에요. 잠시 후 다시 시도해 주세요.
 - ❌ `가격 수집` 데이터가 오래됨: 마지막 2026-11-25 (2일 전)
 
 ## 데이터 최신성
@@ -23,8 +27,8 @@ https://appliance-trend-insight.onrender.com
 | 가전무쌍 | 가격 수집 | ❌ 마지막 2026-11-25 (2일 전) |
 | 가전무쌍 | 기상청 날씨 | ✅ 마지막 2026-11-25 (2일 전) |
 | 가전무쌍 | 에어코리아 미세먼지 | ✅ 마지막 2026-11-27 (0일 전) |
-| NewsDeliver | 국내 뉴스 수집 | ✅ 가장 최근 기사 1.0시간 전 |
-| NewsDeliver | 해외 뉴스 수집 | ✅ 가장 최근 기사 1.2시간 전 |
+| NewsDeliver | 국내 뉴스 수집 | ✅ 가장 최근 기사 0.1시간 전 |
+| NewsDeliver | 해외 뉴스 수집 | ✅ 가장 최근 기사 0.2시간 전 |
 
 <details><summary>건너뛴 API 목록</summary>
 
