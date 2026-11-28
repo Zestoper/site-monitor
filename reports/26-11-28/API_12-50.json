@@ -1,0 +1,104 @@
+[
+  {
+    "site": "가전무쌍",
+    "backend": "https://appliance-trend-insight.onrender.com",
+    "checked": [],
+    "skipped": [],
+    "issues": [
+      {
+        "path": "https://appliance-trend-insight.onrender.com/",
+        "detail": "서버가 2분 안에 깨어나지 않음"
+      }
+    ],
+    "warnings": [],
+    "wake": {
+      "ok": false,
+      "ms": 123844
+    }
+  },
+  {
+    "site": "Persona",
+    "backend": "https://persona-5x3w.onrender.com",
+    "checked": [],
+    "skipped": [],
+    "issues": [
+      {
+        "path": "https://persona-5x3w.onrender.com/health",
+        "detail": "서버가 2분 안에 깨어나지 않음"
+      }
+    ],
+    "warnings": [],
+    "wake": {
+      "ok": false,
+      "ms": 123598
+    }
+  },
+  {
+    "site": "Moodiary",
+    "backend": "https://moodiary-0she.onrender.com",
+    "checked": [],
+    "skipped": [],
+    "issues": [
+      {
+        "path": "https://moodiary-0she.onrender.com/health",
+        "detail": "서버가 2분 안에 깨어나지 않음"
+      }
+    ],
+    "warnings": [],
+    "wake": {
+      "ok": false,
+      "ms": 123699
+    }
+  },
+  {
+    "site": "Neatly",
+    "backend": "https://neatly-backend-xzdm.onrender.com",
+    "checked": [],
+    "skipped": [],
+    "issues": [
+      {
+        "path": "https://neatly-backend-xzdm.onrender.com/health",
+        "detail": "서버가 2분 안에 깨어나지 않음"
+      }
+    ],
+    "warnings": [],
+    "wake": {
+      "ok": false,
+      "ms": 123757
+    }
+  },
+  {
+    "site": "ClearWay",
+    "backend": "https://clearway-3z2c.onrender.com",
+    "checked": [],
+    "skipped": [],
+    "issues": [
+      {
+        "path": "https://clearway-3z2c.onrender.com/health",
+        "detail": "서버가 2분 안에 깨어나지 않음"
+      }
+    ],
+    "warnings": [],
+    "wake": {
+      "ok": false,
+      "ms": 124049
+    }
+  },
+  {
+    "site": "NewsDeliver",
+    "backend": "https://newsdeliver.onrender.com",
+    "checked": [],
+    "skipped": [],
+    "issues": [
+      {
+        "path": "https://newsdeliver.onrender.com/health",
+        "detail": "서버가 2분 안에 깨어나지 않음"
+      }
+    ],
+    "warnings": [],
+    "wake": {
+      "ok": false,
+      "ms": 123921
+    }
+  }
+]

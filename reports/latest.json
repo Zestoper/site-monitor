@@ -1,338 +1,315 @@
 {
-  "stamp": "2026-11-27 23:23",
-  "total": 0,
+  "stamp": "2026-11-28 12:30",
+  "total": 96,
   "results": [
     {
       "site": "가전무쌍",
       "wake": {
-        "ok": true,
-        "ms": 306,
-        "status": 200
+        "ok": false,
+        "ms": 123886
       },
       "auth": {
         "tried": true,
-        "ok": true
+        "ok": false
       },
       "pages": [
         {
           "path": "/",
           "status": 200,
-          "ms": 2103,
-          "issues": [],
+          "ms": 2297,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://appliance-trend-insight.onrender.com/api/ai-analysis?query=%EB%B9%84%EC%8A%A4%ED%8F%AC%ED%81%AC%20%EB%83%89%EC%9E%A5%EA%B3%A0%20RF85C9141AP' from origin 'https://appliance-trend-insight.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header i"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/ai-analysis (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://appliance-trend-insight.onrender.com/api/naver/products?query=%EB%B9%84%EC%8A%A4%ED%8F%AC%ED%81%AC%20%EB%83%89%EC%9E%A5%EA%B3%A0%20RF85C9141AP&page=1&display=1' from origin 'https://appliance-trend-insight.vercel.app' has been blocked by CORS policy: No 'Access-Control-Al"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/naver/products (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://appliance-trend-insight.onrender.com/api/report?query=%EB%B9%84%EC%8A%A4%ED%8F%AC%ED%81%AC%20%EB%83%89%EC%9E%A5%EA%B3%A0%20RF85C9141AP' from origin 'https://appliance-trend-insight.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is pre"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/report (net::ERR_FAILED)"
+            }
+          ],
           "retried": true
         },
         {
           "path": "/login",
           "status": 200,
-          "ms": 2053,
+          "ms": 2229,
           "issues": []
         },
         {
           "path": "/signup",
           "status": 200,
-          "ms": 2065,
+          "ms": 2083,
           "issues": []
         },
         {
           "path": "/b2b/pricing",
           "status": 200,
-          "ms": 2032,
-          "issues": []
-        },
-        {
-          "path": "/home",
-          "status": 200,
-          "ms": 4957,
-          "issues": []
-        },
-        {
-          "path": "/b2b",
-          "status": 200,
-          "ms": 5062,
-          "issues": []
-        },
-        {
-          "path": "/b2b/analysis",
-          "status": 200,
-          "ms": 4755,
-          "issues": []
-        },
-        {
-          "path": "/trend",
-          "status": 200,
-          "ms": 5647,
-          "issues": []
-        },
-        {
-          "path": "/timing",
-          "status": 200,
-          "ms": 4873,
-          "issues": []
-        },
-        {
-          "path": "/compare",
-          "status": 200,
-          "ms": 4836,
-          "issues": []
-        },
-        {
-          "path": "/recommend",
-          "status": 200,
-          "ms": 4758,
-          "issues": []
-        },
-        {
-          "path": "/chat",
-          "status": 200,
-          "ms": 4890,
-          "issues": []
-        },
-        {
-          "path": "/mypage",
-          "status": 200,
-          "ms": 5051,
+          "ms": 2080,
           "issues": []
         }
       ],
-      "count": 0
+      "count": 8
     },
     {
       "site": "Persona",
       "wake": {
-        "ok": true,
-        "ms": 31205,
-        "status": 200
+        "ok": false,
+        "ms": 123830
       },
       "auth": {
         "tried": true,
-        "ok": true
+        "ok": false
       },
       "pages": [
         {
           "path": "/",
           "status": 200,
-          "ms": 2525,
-          "issues": []
+          "ms": 2207,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://persona-5x3w.onrender.com/health' from origin 'https://persona-peach-rho.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors'"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
         },
         {
           "path": "/marketplace",
           "status": 200,
-          "ms": 3051,
-          "issues": []
+          "ms": 2079,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://persona-5x3w.onrender.com/health' from origin 'https://persona-peach-rho.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors'"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://persona-5x3w.onrender.com/health' from origin 'https://persona-peach-rho.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors'"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to XMLHttpRequest at 'https://persona-5x3w.onrender.com/api/v1/personas/public?sort=popular&search=&tag=&skip=0&limit=20' from origin 'https://persona-peach-rho.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/v1/personas/public (net::ERR_FAILED)"
+            },
+            {
+              "type": "JS 예외",
+              "detail": "Network Error"
+            }
+          ],
+          "retried": true
         },
         {
           "path": "/pricing",
           "status": 200,
-          "ms": 2467,
-          "issues": []
+          "ms": 2386,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://persona-5x3w.onrender.com/health' from origin 'https://persona-peach-rho.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors'"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
         },
         {
           "path": "/login",
           "status": 200,
-          "ms": 2334,
-          "issues": []
+          "ms": 2287,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to XMLHttpRequest at 'https://persona-5x3w.onrender.com/health' from origin 'https://persona-peach-rho.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://persona-5x3w.onrender.com/health' from origin 'https://persona-peach-rho.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors'"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
         },
         {
           "path": "/register",
           "status": 200,
-          "ms": 2232,
-          "issues": []
-        },
-        {
-          "path": "/my",
-          "status": 200,
-          "ms": 3139,
-          "issues": []
-        },
-        {
-          "path": "/favorites",
-          "status": 200,
-          "ms": 2836,
-          "issues": []
-        },
-        {
-          "path": "/conversations",
-          "status": 200,
-          "ms": 3244,
-          "issues": []
-        },
-        {
-          "path": "/collections",
-          "status": 200,
-          "ms": 4749,
-          "issues": []
-        },
-        {
-          "path": "/create",
-          "status": 200,
-          "ms": 2372,
-          "issues": []
-        },
-        {
-          "path": "/profile",
-          "status": 200,
-          "ms": 2458,
-          "issues": []
+          "ms": 2092,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://persona-5x3w.onrender.com/health' from origin 'https://persona-peach-rho.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors'"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
         }
       ],
-      "count": 0
+      "count": 19
     },
     {
       "site": "Moodiary",
       "wake": {
-        "ok": true,
-        "ms": 36391,
-        "status": 200
+        "ok": false,
+        "ms": 124059
       },
       "auth": {
         "tried": true,
-        "ok": true
+        "ok": false,
+        "error": "화면 메시지: 서버 연결 실패"
       },
       "pages": [
         {
           "path": "/login",
           "status": 200,
-          "ms": 2526,
-          "issues": []
-        },
-        {
-          "path": "/diary",
-          "status": 200,
-          "ms": 4132,
-          "issues": []
-        },
-        {
-          "path": "/calendar",
-          "status": 200,
-          "ms": 3133,
-          "issues": []
-        },
-        {
-          "path": "/chat",
-          "status": 200,
-          "ms": 3233,
-          "issues": []
-        },
-        {
-          "path": "/consult",
-          "status": 200,
-          "ms": 3149,
-          "issues": []
-        },
-        {
-          "path": "/recap",
-          "status": 200,
-          "ms": 4044,
-          "issues": []
-        },
-        {
-          "path": "/profile",
-          "status": 200,
-          "ms": 3136,
-          "issues": []
-        },
-        {
-          "path": "/payment",
-          "status": 200,
-          "ms": 3239,
-          "issues": []
+          "ms": 2393,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://moodiary-0she.onrender.com/' from origin 'https://moodiary-five.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET / (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://moodiary-0she.onrender.com/health' from origin 'https://moodiary-five.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
         }
       ],
-      "count": 0
+      "count": 6
     },
     {
       "site": "Neatly",
       "wake": {
-        "ok": true,
-        "ms": 36430,
-        "status": 200
+        "ok": false,
+        "ms": 123325
       },
       "auth": {
         "tried": true,
-        "ok": true
+        "ok": false
       },
       "pages": [
         {
           "path": "/",
           "status": 200,
-          "ms": 2314,
-          "issues": []
+          "ms": 2293,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://neatly-backend-xzdm.onrender.com/health' from origin 'https://neatly-wheat.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cor"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
         },
         {
           "path": "/login",
           "status": 200,
-          "ms": 2239,
-          "issues": []
+          "ms": 2096,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://neatly-backend-xzdm.onrender.com/health' from origin 'https://neatly-wheat.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cor"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
         },
         {
           "path": "/register",
           "status": 200,
-          "ms": 2242,
-          "issues": []
+          "ms": 2091,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://neatly-backend-xzdm.onrender.com/health' from origin 'https://neatly-wheat.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cor"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
         },
         {
           "path": "/plans",
           "status": 200,
-          "ms": 2240,
-          "issues": []
-        },
-        {
-          "path": "/dashboard",
-          "status": 200,
-          "ms": 6275,
-          "issues": []
-        },
-        {
-          "path": "/documents",
-          "status": 200,
-          "ms": 4543,
-          "issues": []
-        },
-        {
-          "path": "/emails",
-          "status": 200,
-          "ms": 4582,
-          "issues": []
-        },
-        {
-          "path": "/calendar",
-          "status": 200,
-          "ms": 5963,
-          "issues": []
-        },
-        {
-          "path": "/insights",
-          "status": 200,
-          "ms": 4756,
-          "issues": []
-        },
-        {
-          "path": "/search",
-          "status": 200,
-          "ms": 5152,
-          "issues": []
-        },
-        {
-          "path": "/settings",
-          "status": 200,
-          "ms": 4462,
-          "issues": []
-        },
-        {
-          "path": "/trash",
-          "status": 200,
-          "ms": 4053,
-          "issues": []
+          "ms": 2106,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://neatly-backend-xzdm.onrender.com/health' from origin 'https://neatly-wheat.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cor"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
         }
       ],
-      "count": 0
+      "count": 10
     },
     {
       "site": "ClearWay",
       "wake": {
-        "ok": true,
-        "ms": 31527,
-        "status": 200
+        "ok": false,
+        "ms": 123732
       },
       "auth": {
         "tried": false
@@ -341,75 +318,283 @@
         {
           "path": "/",
           "status": 200,
-          "ms": 3178,
-          "issues": []
+          "ms": 2387,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://clearway-3z2c.onrender.com/health' from origin 'https://clear-way-drab.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' t"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://clearway-3z2c.onrender.com/health' from origin 'https://clear-way-drab.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' t"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://clearway-3z2c.onrender.com/api/v1/reviews' from origin 'https://clear-way-drab.vercel.app' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/v1/reviews (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://clearway-3z2c.onrender.com/api/v1/notices?category=event' from origin 'https://clear-way-drab.vercel.app' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested "
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/v1/notices (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
         }
       ],
-      "count": 0
+      "count": 9
     },
     {
       "site": "NewsDeliver",
       "wake": {
-        "ok": true,
-        "ms": 278,
-        "status": 200
+        "ok": false,
+        "ms": 123498
       },
       "auth": {
         "tried": true,
-        "ok": true
+        "ok": false
       },
       "pages": [
         {
           "path": "/",
           "status": 200,
-          "ms": 6866,
-          "issues": [],
+          "ms": 2624,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/api/market' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/market (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/api/v1/home' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' t"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/v1/home (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/api/age-news?group=teen' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/age-news (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/health' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fet"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/api/market' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/market (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/api/v1/home' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' t"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/v1/home (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/api/age-news?group=teen' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/age-news (net::ERR_FAILED)"
+            }
+          ],
           "retried": true
         },
         {
           "path": "/news",
           "status": 200,
-          "ms": 5467,
-          "issues": []
+          "ms": 2691,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/health' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fet"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/api/v1/news?page=1' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/v1/news (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/api/v1/news?page=1' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/v1/news (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
         },
         {
           "path": "/global-news",
           "status": 200,
-          "ms": 3874,
-          "issues": []
+          "ms": 2692,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/health' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fet"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/api/v1/global-news?page=1' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode "
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/v1/global-news (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/api/v1/global-news?page=1' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode "
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/v1/global-news (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
         },
         {
           "path": "/search",
           "status": 200,
-          "ms": 3946,
-          "issues": []
+          "ms": 2098,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/health' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fet"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/api/v1/search?' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/v1/search (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
         },
         {
           "path": "/about",
           "status": 200,
-          "ms": 2234,
-          "issues": []
+          "ms": 2293,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/health' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fet"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
         },
         {
           "path": "/subscribe",
           "status": 200,
-          "ms": 3137,
-          "issues": []
+          "ms": 2206,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/health' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fet"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/api/v1/subscribe' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-co"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/v1/subscribe (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
         },
         {
           "path": "/login",
           "status": 200,
-          "ms": 2534,
-          "issues": []
-        },
-        {
-          "path": "/mypage",
-          "status": 200,
-          "ms": 5345,
-          "issues": []
+          "ms": 2687,
+          "issues": [
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/health' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fet"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /health (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/api/v1/auth/providers' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to '"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/v1/auth/providers (net::ERR_FAILED)"
+            },
+            {
+              "type": "콘솔 에러",
+              "detail": "Access to fetch at 'https://newsdeliver.onrender.com/api/v1/auth/providers' from origin 'https://newsdeliver.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to '"
+            },
+            {
+              "type": "요청 실패",
+              "detail": "GET /api/v1/auth/providers (net::ERR_FAILED)"
+            }
+          ],
+          "retried": true
         }
       ],
-      "count": 0
+      "count": 44
     }
   ]
 }
